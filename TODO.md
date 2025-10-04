@@ -1,12 +1,6 @@
-# Rename Website to "AEOM" - Task Breakdown
-
-## Completed Tasks
-- [x] Analyze current branding references (zScore, Zeru)
-- [x] Create comprehensive edit plan
-- [x] Update src/app/layout.tsx metadata and titles to "AEOM"
-- [x] Update src/components/common/Footer.tsx branding and URLs
-- [x] Update src/components/common/Header.tsx branding references
-- [x] Update src/components/sections/ProductsPoweredSection.tsx product badges and URLs
-
-## Pending Tasks
-- [ ] Verify all changes and test website
+- [x] Update desktop image container size from w-2/5 to w-1/2
+- [x] Add rounded and glowing styles to desktop image container
+- [x] Update mobile image container max-width from max-w-xs to max-w-md
+- [x] Add rounded and glowing styles to mobile image container
+- [ ] Remove ring border from image containers
+- [ ] Change image object-fit to cover for better fit

@@ -34,8 +34,8 @@ const teamMemberData = [
     profilePic: '/images/team/premal.jpg',
     description: 'Premal specializes in building fast, responsive, and scalable front-end applications with a focus on clean code and performance.',
     socials: [
-      { name: 'LinkedIn', url: 'https://linkedin.com/' },
-      { name: 'GitHub', url: 'https://github.com/' },
+      { name: 'LinkedIn', url: 'https://linkedin.com/in/premal-ariwala' },
+      { name: 'GitHub', url: 'https://github.com/Premal-hub' },
     ],
     bgColor: 'bg-[#f0f9f7]',
     textColor: 'text-[#00aa8b]',

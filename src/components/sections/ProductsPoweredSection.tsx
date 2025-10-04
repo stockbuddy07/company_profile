@@ -1,19 +1,19 @@
 'use client';
 
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useRef } from 'react';
 import Image from 'next/image';
 
 const productCards = [
   {
     id: 1,
-    badge: 'aClaim',
-    title: "Claim your NoBuddy to your wallet, so dApps can know, that you're real",
+    badge: 'Blinkers.co.in',
+    title: "Digital showcase for an eye care professional",
     description:
-      'NFT representing onchain + offchain (zkTLS) reputation, that helps protocols identify real users, and filter out bots',
+      'Designed and launched a digital showcase for an eye care professional, featuring a browsable catalogue of 200+ eyewear products in real-time',
     bgColor: '#f6f7fc',
     textColor: '#4fa1ce',
-    image: '/images/products/product1.avif',
+    image: '/images/products/blinkers1.png',
   },
   {
     id: 2,
@@ -39,18 +39,6 @@ const productCards = [
 
 export default function ProductsPoweredSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ['start end', 'end start'],
-  });
-
-  // Transform for sticky header
-  const headerY = useTransform(scrollYProgress, [0, 0.3], [0, -100]);
-  const headerOpacity = useTransform(scrollYProgress, [0, 0.2, 0.3], [1, 1, 0]);
-
-  // Transform for cards animation
-  const cardsY = useTransform(scrollYProgress, [0.2, 0.8], [100, -100]);
-  const cardsOpacity = useTransform(scrollYProgress, [0.2, 0.3, 0.7, 0.8], [0, 1, 1, 0]);
 
   return (
     <section
@@ -111,7 +99,7 @@ export default function ProductsPoweredSection() {
           // style={{ y: cardsY, opacity: cardsOpacity }}
           className="space-y-48 z-20 pb-72"
         >
-          {productCards.map((card, index) => (
+          {productCards.map((card) => (
             <motion.div
               key={card.id}
               // initial={{ opacity: 0, y: 50 }}
@@ -168,13 +156,13 @@ export default function ProductsPoweredSection() {
                 </div>
 
                 {/* Image */}
-                <div className="flex-shrink-0 w-2/5">
-                  <div className="relative aspect-square">
+                <div className="flex-shrink-0 w-1/2">
+                  <div className="relative aspect-square rounded-3xl shadow-2xl">
                     <Image
                       src={card.image}
                       alt={`${card.badge} product illustration`}
                       fill
-                      className="object-contain"
+                      className="object-cover"
                     />
                   </div>
                 </div>
@@ -267,12 +255,12 @@ export default function ProductsPoweredSection() {
 
                 {/* Image */}
                 <div className="flex-shrink-0 w-full">
-                  <div className="relative aspect-square max-w-xs mx-auto">
+                  <div className="relative aspect-square max-w-md mx-auto rounded-3xl shadow-2xl">
                     <Image
                       src={card.image}
                       alt={`${card.badge} product illustration`}
                       fill
-                      className="object-contain"
+                      className="object-cover"
                     />
                   </div>
                 </div>
