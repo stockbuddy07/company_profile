@@ -3,17 +3,17 @@
 import { motion } from 'framer-motion';
 import { useRef } from 'react';
 
-const marqueeTexts = [
-  'FOR LENDING PROTOCOLS',
-  'FOR DEXES',
-  'FOR PERPETUAL DEXES',
-  'FOR AIRDROP CAMPAIGNS',
-  'FOR NFT MINTS',
-  'FOR CREDIT PROTOCOLS',
-  'FOR STAKING PROTOCOLS',
-  'FOR DEFI PROTOCOLS',
-  'FOR GOVERNANCE',
-  'FOR LIQUIDITY POOLS',
+const marqueeTexts = [ 
+  'FOR FREELANCER GROUPS',
+  'FOR AI-POWERED SOLUTIONS',
+  'FOR RAPID PROTOTYPING',
+  'FOR TOP-TIER PROJECTS',
+  'FOR UI/UX DESIGNERS',
+  'FOR SMART CONTRACT DEVELOPERS',
+  'FOR DIGITAL MARKETING PROJECTS',
+  'FOR FULL-STACK TEAMS',
+  'FOR FLUTTER APP',
+  'FOR WEBSITE DEVELOPER',
 ];
 
 const marqueeTime = 15;
@@ -315,27 +315,6 @@ export default function GetInTouchSection() {
             )}
           </motion.div>
         </div>
-
-        {/* Row 12
-         <div className="absolute top-[880px] left-0 w-full h-20 overflow-hidden">
-          <motion.div
-            className="flex whitespace-nowrap"
-            animate={{
-              x: ['0%', '-100%'],
-            }}
-            transition={{
-              duration: marqueeTime,
-              repeat: Infinity,
-              ease: 'linear',
-            }}
-          >
-            {[...marqueeTexts, ...marqueeTexts, ...marqueeTexts, ...marqueeTexts].map((text, index) => (
-              <span key={index} className="mx-2 text-[#9de2d0] font-semibold text-3xl md:text-5xl">
-                {text}{' '}{' '}•
-              </span>
-            ))}
-          </motion.div>
-        </div> */}
 
         {/* Get in Touch Button */}
         <motion.div

@@ -1,9 +1,9 @@
 import Link from 'next/link';
 
 const navigationItems = [
-  { name: 'Team', href: '#reputation' },
-  { name: 'Solution', href: '#solution' },
-  { name: 'Projects', href: '#projects' },
+  { name: 'Solution', href: '#reputation' },
+  { name: 'Team', href: '#solution' },
+  { name: 'Projects', href: '#products' },
   { name: 'Docs', href: '#docs' }, 
 ];
 

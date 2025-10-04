@@ -8,9 +8,10 @@ import Navigation from './Navigation';
 import SocialLinks from './SocialLinks';
 
 const navigationItems = [
-  { name: 'Reputation', href: '#reputation' },
-  { name: 'Solution', href: '#solution' },
-  { name: 'Products', href: '#products' },
+  
+  { name: 'Team', href: '#reputation' },
+  { name: 'Solution', href: '#Solution' },
+  { name: 'Projects', href: '#projects' },
   { name: 'Docs', href: 'https://docs.aeom.ai/' },
 ];
 

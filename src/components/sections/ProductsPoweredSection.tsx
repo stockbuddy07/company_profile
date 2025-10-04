@@ -14,26 +14,39 @@ const productCards = [
     bgColor: '#f6f7fc',
     textColor: '#4fa1ce',
     image: '/images/products/blinkers1.png',
+    hasLearnMore: true,
+    link: 'https://blinkers.co.in',
   },
   {
     id: 2,
-    badge: 'aPass',
-    title: 'Whitelabel NoBuddy as a service user-retention solution for protocols',
+    badge: 'StayMate PG App',
+    title: 'StayMate PG App, a mobile solution to streamline paying guest management',
     description:
-      'Custom aSAAS APIs for protocols to identify & reward loyal users, that allows protocols provide better LTV, borrow rates, swap fees to loyal users',
+      'Engineered a cross-platform mobile app to streamline PG management, architecting a Firebase backend to support real-time data sync for 500+ simulated users.',
     bgColor: '#ffecfe',
     textColor: '#c929cb',
-    image: '/images/products/product2.avif',
+    image: '/images/products/smartpg-ayush.png',
   },
   {
     id: 3,
-    badge: 'NoBuddy',
-    title: 'Take loans, farm yield, build your NoBuddy to maximize leverage',
-    description: 'Credit backed money market dApp with reputation based leverage',
+    badge: 'Invento',
+    title: 'Stay ahead with real-time stock tracking and smart ordering.!!',
+    description: 'The process of tracking and controlling stock to ensure the right products are available when needed, while minimizing costs. ',
     bgColor: '#f4f1fb',
     textColor: '#9B61FF',
-    image: '/images/products/product3.avif',
+    image: '/images/products/invento-ayush.jpg',
     hasLearnMore: true,
+  },
+  {
+    id: 4,
+    badge: 'Vintage Hub E-Commerce',
+    title: 'Storefront with categories and products & Deployment Ready !!',
+    description: 'Ecommerce Platform for a Local Shop Handling Whole Business online !',
+    bgColor: '#FBE9E7',
+    textColor: '#D32F2F',
+    image: '/images/products/vintage-ayush.png',
+    hasLearnMore: true,
+    link: 'https://aeom.financex',
   },
 ];
 
@@ -76,28 +89,12 @@ export default function ProductsPoweredSection() {
             <br />
             <span className="text-cta">NoBuddy</span>
           </motion.h2>
-
-          {/* Flow Diagram Image */}
-          <motion.div
-            // initial={{ opacity: 0, y: 20 }}
-            // whileInView={{ opacity: 1, y: 0 }}
-            // transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative w-full max-w-4xl mx-auto"
-          >
-            <Image
-              src="/images/products/product.png"
-              alt="Products Powered by NoBuddy Flow Diagram"
-              width={1000}
-              height={700}
-              className="w-full h-auto object-contain"
-            />
-          </motion.div>
         </motion.div>
 
         {/* Animated Cards Section */}
         <motion.div
           // style={{ y: cardsY, opacity: cardsOpacity }}
-          className="space-y-48 z-20 pb-72"
+          className="space-y-24 z-20 pb-72"
         >
           {productCards.map((card) => (
             <motion.div
@@ -105,10 +102,10 @@ export default function ProductsPoweredSection() {
               // initial={{ opacity: 0, y: 50 }}
               // whileInView={{ opacity: 1, y: 0 }}
               // transition={{ duration: 0.8, delay: index * 0.2 }}
-              className="relative"
+              className="relative -mt-12"
             >
               <div
-                className="rounded-4xl md:py-8 md:px-8 flex gap-8 md:gap-12 h-full max-w-4xl mx-auto rotate-3"
+                className="rounded-4xl md:py-8 md:px-8 flex gap-8 md:gap-12 h-full max-w-6xl mx-auto rotate-3"
                 style={{ backgroundColor: card.bgColor }}
               >
                 {/* Content */}
@@ -136,7 +133,7 @@ export default function ProductsPoweredSection() {
                     {card.description}
                   </p>
 
-                  {/* Learn More Button for ZERU */}
+                  {/* Learn More Button for NoBuddy */}
                   {card.hasLearnMore && (
                     <div>
                       <a
@@ -145,7 +142,7 @@ export default function ProductsPoweredSection() {
                           backgroundColor: card.textColor,
                           color: 'white',
                         }}
-                        href="https://aeom.finance"
+                        href={card.link}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -157,12 +154,12 @@ export default function ProductsPoweredSection() {
 
                 {/* Image */}
                 <div className="flex-shrink-0 w-1/2">
-                  <div className="relative aspect-square rounded-3xl shadow-2xl">
+                  <div className="relative aspect-[4/3] rounded-3xl shadow-2xl">
                     <Image
                       src={card.image}
                       alt={`${card.badge} product illustration`}
                       fill
-                      className="object-cover"
+                      className="object-contain"
                     />
                   </div>
                 </div>
@@ -198,22 +195,6 @@ export default function ProductsPoweredSection() {
             <br />
             <span className="text-cta">AEOM</span>
           </motion.h2>
-
-          {/* Flow Diagram Image */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative w-full max-w-4xl mx-auto"
-          >
-            <Image
-              src="/images/products/product.png"
-              alt="Products Powered by AEOM Flow Diagram"
-              width={1000}
-              height={700}
-              className="w-full h-auto object-contain"
-            />
-          </motion.div>
         </div>
 
         {/* Mobile Cards */}
@@ -224,10 +205,10 @@ export default function ProductsPoweredSection() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="relative"
+              className="relative -mt-12"
             >
               <div
-                className="rounded-4xl py-6 px-4 flex flex-col gap-6 h-full max-w-4xl mx-auto"
+                className="rounded-4xl py-6 px-4 flex flex-col gap-6 h-full max-w-6xl mx-auto"
                 style={{ backgroundColor: card.bgColor }}
               >
                 {/* Badge */}
@@ -255,14 +236,14 @@ export default function ProductsPoweredSection() {
 
                 {/* Image */}
                 <div className="flex-shrink-0 w-full">
-                  <div className="relative aspect-square max-w-md mx-auto rounded-3xl shadow-2xl">
-                    <Image
-                      src={card.image}
-                      alt={`${card.badge} product illustration`}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
+                <div className={`relative aspect-[4/3] ${card.id === 2 ? "max-w-lg" : "max-w-md"} mx-auto rounded-3xl shadow-2xl`}>
+                  <Image
+                    src={card.image}
+                    alt={`${card.badge} product illustration`}
+                    fill
+                    className={card.id === 2 ? "object-cover" : "object-contain"}
+                  />
+                </div>
                 </div>
 
                 {/* Learn More Button for ZERU */}
@@ -274,7 +255,7 @@ export default function ProductsPoweredSection() {
                         backgroundColor: card.textColor,
                         color: 'white',
                       }}
-                      href="https://aeom.finance"
+                      href={card.link}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
