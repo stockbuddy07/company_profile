@@ -11,7 +11,7 @@ const navigationItems = [
   { name: 'Reputation', href: '#reputation' },
   { name: 'Solution', href: '#solution' },
   { name: 'Products', href: '#products' },
-  { name: 'Docs', href: 'https://docs.myzscore.ai/' },
+  { name: 'Docs', href: 'https://docs.aeom.ai/' },
 ];
 
 export default function Header() {

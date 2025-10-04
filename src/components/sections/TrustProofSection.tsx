@@ -37,65 +37,65 @@ const trustProofCards = [
   {
     id: 1,
     number: '01',
-    title: 'But Bot Farms Take 90% of the Pool, and you Only Get $3',
-    description: 'You farm an airdrop for 5 months straight',
+    title: 'AI-Enhanced Strategy & Workflow',
+    description: 'We leverage AI for intelligent planning, code optimization, and efficient workflows, delivering superior results faster.',
     bgColor: 'bg-[#f4f1fb]',
     textColor: 'text-cta',
     numberBg: 'bg-purple-200',
-    image: '/images/trust-proof/benifits5.avif',
+    image: '/images/trust-proof/ai.avif',
   },
   {
     id: 2,
     number: '02',
-    title: 'But the Founder is a Serial Rug-Puller, and you Lose Everything',
-    description: 'You invest in a token, that is promised to make 1000x',
+    title: 'Intuitive User-Centric Design (UI/UX)',
+    description: 'Our design process focuses on creating beautiful, intuitive, and memorable experiences that keep your users engaged.',
     bgColor: 'bg-[#ffecfe]',
     textColor: 'text-[#c929cb]',
     numberBg: 'bg-pink-200',
-    image: '/images/trust-proof/benifits7.avif',
+    image: '/images/trust-proof/ayush.png',
   },
   {
     id: 3,
     number: '03',
-    title: 'But you Get no Benefits for this, and Still Pay the 1% Fee',
-    description: 'You use a DEX for 8 months EVERY single day',
-
+    title: 'Pixel-Perfect Frontend Development',
+    description: 'We bring designs to life with clean, responsive, and high-performance code that looks stunning on any device.',
     bgColor: 'bg-[#f6f7fc]',
     textColor: 'text-[#4fa1ce]',
     numberBg: 'bg-blue-200',
-    image: '/images/trust-proof/benifits6.avif',
+    image: '/images/trust-proof/premal.avif',
   },
   {
     id: 4,
     number: '04',
-    title: "Even Though you've Never Defaulted on your Aave Position",
-    description: "You're depositing 150% collateral",
+    title: 'Robust & Scalable Backend Systems',
+    description: 'Building the secure and powerful server-side architecture your application needs to handle growth and succeed.',
     bgColor: 'bg-[#f0f9f7]',
     textColor: 'text-[#00aa8b]',
     numberBg: 'bg-green-200',
-    image: '/images/trust-proof/benifits9.avif',
+    image: '/images/trust-proof/urvashi.avif',
   },
   {
     id: 5,
     number: '05',
-    title: 'But Have the Same Funding Rates, as the DEGEN who YOLOs Every Single Time',
-    description: 'You never got liquidated in a perpetual DEX, and always play safe',
-    bgColor: 'bg-[#f9f9f9]',
-    textColor: 'text-[#666666]',
-    numberBg: 'bg-teal-200',
+    title: 'Complete Web & Mobile Solutions',
+    description: 'From web apps to iOS & Flutter, our full-stack and mobile experts build cohesive, end-to-end digital products.',
+    bgColor: 'bg-[#fdf8e9]',
+    textColor: 'text-[#f5a623]',
+    numberBg: 'bg-yellow-200',
     image: '/images/trust-proof/benifits8.avif',
   },
-  // {
-  //   id: 6,
-  //   number: '06',
-  //   title: 'But Have the Same Funding Rates, as the DEGEN who YOLOs Every Single Time',
-  //   description: 'You never got liquidated in a perpetual DEX, and always play safe',
-  //   bgColor: 'bg-[#f9f9f9]',
-  //   textColor: 'text-[#666666]',
-  //   numberBg: 'bg-teal-200',
-  //   image: '/images/trust-proof/benifits8.avif',
-  // },
+  {
+    id: 6,
+    number: '06',
+    title: 'Agile Process & On-Time Delivery',
+    description: 'We use an agile methodology with clear milestones, regular updates, and rigorous testing to deliver your project on schedule and to the highest standard.',
+    bgColor: 'bg-[#f9f9f9]',
+    textColor: 'text-[#666666]',
+    numberBg: 'bg-gray-200',
+    image: '/images/trust-proof/devang.avif', 
+  },
 ];
+
 
 export default function TrustProofSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -108,7 +108,7 @@ export default function TrustProofSection() {
   // These calculations ensure center-to-center scrolling regardless of card count
 
   // Card dimensions (must match Tailwind classes: w-96 = 384px, gap-8 = 32px)
-  const cardWidth = 384; // w-96 in Tailwind
+  const cardWidth =384; // w-96 in Tailwind
   const cardGap = 32; // gap-8 in Tailwind
 
   // Calculate total width of all cards including gaps
@@ -166,7 +166,7 @@ export default function TrustProofSection() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="md:text-5xl text-4xl font-semibold mb-4 leading-tight"
             >
-              <span className="text-cta">Bots & Scammers</span>
+              <span className="text-cta">TEAM MEMBERS</span>
               <br />
               <span className="text-primary">are Always Ahead of You</span>
             </motion.h2>
@@ -241,9 +241,10 @@ export default function TrustProofSection() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="md:text-5xl text-4xl font-semibold mb-4 leading-tight"
             >
-              <span className="text-cta">Bots & Scammers</span>
+              <span className="text-cta">Solutions For Every Work</span>
+              
               <br />
-              <span className="text-primary">are Always Ahead of You</span>
+              <span className="text-primary">We Are Always Ahead of You</span>
             </motion.h2>
 
             <motion.p

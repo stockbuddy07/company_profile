@@ -7,8 +7,8 @@ import Image from 'next/image';
 const productCards = [
   {
     id: 1,
-    badge: 'zClaim',
-    title: "Claim your zScore to your wallet, so dApps can know, that you're real",
+    badge: 'aClaim',
+    title: "Claim your NoBuddy to your wallet, so dApps can know, that you're real",
     description:
       'NFT representing onchain + offchain (zkTLS) reputation, that helps protocols identify real users, and filter out bots',
     bgColor: '#f6f7fc',
@@ -17,18 +17,18 @@ const productCards = [
   },
   {
     id: 2,
-    badge: 'zPass',
-    title: 'Whitelabel zScore as a service user-retention solution for protocols',
+    badge: 'aPass',
+    title: 'Whitelabel NoBuddy as a service user-retention solution for protocols',
     description:
-      'Custom zSAAS APIs for protocols to identify & reward loyal users, that allows protocols provide better LTV, borrow rates, swap fees to loyal users',
+      'Custom aSAAS APIs for protocols to identify & reward loyal users, that allows protocols provide better LTV, borrow rates, swap fees to loyal users',
     bgColor: '#ffecfe',
     textColor: '#c929cb',
     image: '/images/products/product2.avif',
   },
   {
     id: 3,
-    badge: 'ZERU',
-    title: 'Take loans, farm yield, build your ZScore to maximize leverage',
+    badge: 'NoBuddy',
+    title: 'Take loans, farm yield, build your NoBuddy to maximize leverage',
     description: 'Credit backed money market dApp with reputation based leverage',
     bgColor: '#f4f1fb',
     textColor: '#9B61FF',
@@ -86,7 +86,7 @@ export default function ProductsPoweredSection() {
           >
             Products Powered by
             <br />
-            <span className="text-cta">zScore</span>
+            <span className="text-cta">NoBuddy</span>
           </motion.h2>
 
           {/* Flow Diagram Image */}
@@ -98,7 +98,7 @@ export default function ProductsPoweredSection() {
           >
             <Image
               src="/images/products/product.png"
-              alt="Products Powered by zScore Flow Diagram"
+              alt="Products Powered by NoBuddy Flow Diagram"
               width={1000}
               height={700}
               className="w-full h-auto object-contain"
@@ -157,7 +157,7 @@ export default function ProductsPoweredSection() {
                           backgroundColor: card.textColor,
                           color: 'white',
                         }}
-                        href="https://zeru.finance"
+                        href="https://aeom.finance"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -208,7 +208,7 @@ export default function ProductsPoweredSection() {
           >
             Products Powered by
             <br />
-            <span className="text-cta">zScore</span>
+            <span className="text-cta">AEOM</span>
           </motion.h2>
 
           {/* Flow Diagram Image */}
@@ -220,7 +220,7 @@ export default function ProductsPoweredSection() {
           >
             <Image
               src="/images/products/product.png"
-              alt="Products Powered by zScore Flow Diagram"
+              alt="Products Powered by AEOM Flow Diagram"
               width={1000}
               height={700}
               className="w-full h-auto object-contain"
@@ -286,7 +286,7 @@ export default function ProductsPoweredSection() {
                         backgroundColor: card.textColor,
                         color: 'white',
                       }}
-                      href="https://zeru.finance"
+                      href="https://aeom.finance"
                       target="_blank"
                       rel="noopener noreferrer"
                     >

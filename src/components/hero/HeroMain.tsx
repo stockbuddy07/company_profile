@@ -69,7 +69,7 @@ export default function HeroMain() {
 
       <div className="relative z-10 flex-1 flex-col">
         <HeroSection />
-        <div className="bottom-12 w-full flex justify-center">
+        {/* <div className="bottom-12 w-full flex justify-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -84,7 +84,7 @@ export default function HeroMain() {
               </Button>
             </a>
           </motion.div>
-        </div>
+        </div> */}
       </div>
     </main>
   );

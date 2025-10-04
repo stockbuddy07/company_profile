@@ -11,7 +11,7 @@ export default function WelcomeText() {
         transition={{ duration: 0.6, delay: 0.2 }}
       >
         <span className="text-cta font-medium text-sm bg-background px-4 py-2 rounded-full">
-          Welcome to zScore
+          Welcome to NoBuddy
         </span>
       </motion.div>
     </div>

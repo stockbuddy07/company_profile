@@ -4,16 +4,16 @@ import './globals.css';
 import Header from '@/components/common/Header';
 
 export const metadata: Metadata = {
-  title: 'zScore - True Reputation Onchain, Without KYC',
+  title: 'NoBuddy - True Reputation Onchain, Without KYC',
   description:
     'Eigen AVS for reputation, powered by AI. Build your onchain reputation without KYC requirements.',
-  keywords: ['blockchain', 'reputation', 'onchain', 'AI', 'KYC', 'zScore'],
-  authors: [{ name: 'zScore Team' }],
+  keywords: ['blockchain', 'reputation', 'onchain', 'AI', 'KYC', 'NoBuddy'],
+  authors: [{ name: 'NoBuddy Team' }],
   icons: {
     icon: '/favicon.svg',
   },
   openGraph: {
-    title: 'zScore - True Reputation Onchain, Without KYC',
+    title: 'NoBuddy - True Reputation Onchain, Without KYC',
     description: 'Eigen AVS for reputation, powered by AI',
     type: 'website',
   },

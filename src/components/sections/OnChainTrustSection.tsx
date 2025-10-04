@@ -4,11 +4,9 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 
 const textLines = [
-  'Absolutely All Good Actors: you,',
-  'other users, Projects - Only Lose',
-  'Because you Have no Onchain',
-  'Way to Prove that you Can be',
-  'Trusted',
+  'Great projects are built on trust.',
+  'We are the partner',
+  'you can rely on.',
 ];
 
 export default function OnChainTrustSection() {
@@ -26,7 +24,7 @@ export default function OnChainTrustSection() {
           {/* Badge */}
           <div className="mb-8">
             <span className="inline-block px-4 py-2 bg-cta/10 text-cta rounded-full text-sm font-medium">
-              On-Chain Trust
+              NoBuddy
             </span>
           </div>
 

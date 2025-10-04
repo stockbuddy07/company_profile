@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 
 export default function AnimatedHeading() {
-  const text = 'Now, You Have True Reputation Onchain, Without KYC';
+  const text = 'Connecting talents, sharing dreams—this is the story of our group.';
   const words = text.split(' ');
 
   const container = {

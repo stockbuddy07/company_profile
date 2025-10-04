@@ -9,17 +9,17 @@ export default function Footer() {
           <div className="flex flex-col gap-1">
             <Image
               src="/images/logos/logo.avif"
-              alt="Zeru Logo"
+              alt="NoBuddy Logo"
               width={60}
               height={60}
               className="h-12 w-fit"
             />
-            <p className="text-sm text-secondary font-medium">©2025 ZERU</p>
+            <p className="text-sm text-secondary font-medium">©2025 NoBuddy</p>
           </div>
 
-          {/* Section 2: Zeru */}
+          {/* Section 2: NoBuddy */}
           <div className="flex flex-col gap-3">
-            <h3 className="text-base font-medium text-secondary uppercase tracking-wide">Zeru</h3>
+            <h3 className="text-base font-medium text-secondary uppercase tracking-wide">NoBuddy</h3>
             <div className="flex flex-col gap-1 font-medium text-base text-primary">
               <a href="#reputation" className="hover:text-cta transition-colors duration-200">
                 Reputation
@@ -48,7 +48,7 @@ export default function Footer() {
                 Discord
               </a>
               <a
-                href="https://x.com/zerufinance"
+                href="https://x.com/aeomfinance"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-cta transition-colors duration-200"
@@ -56,7 +56,7 @@ export default function Footer() {
                 Twitter
               </a>
               <a
-                href="https://t.me/zerufinancediscussions"
+                href="https://t.me/aeomfinancediscussions"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-cta transition-colors duration-200"
@@ -64,7 +64,7 @@ export default function Footer() {
                 Telegram
               </a>
               <a
-                href="https://blog.zeru.finance"
+                href="https://blog.aeom.finance"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-cta transition-colors duration-200"
@@ -81,7 +81,7 @@ export default function Footer() {
             </h3>
             <div className="flex flex-col gap-1 font-medium text-base text-primary">
               <a
-                href="https://docs.myzscore.ai/"
+                href="https://docs.aeom.ai/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-cta transition-colors duration-200"
@@ -89,7 +89,7 @@ export default function Footer() {
                 Docs
               </a>
               <a
-                href="https://github.com/zerufinance/brand-kit"
+                href="https://github.com/aeomfinance/brand-kit"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-cta transition-colors duration-200"
@@ -97,7 +97,7 @@ export default function Footer() {
                 Brand kit
               </a>
               <a
-                href="https://terms.zeru.finance/"
+                href="https://terms.aeom.finance/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-cta transition-colors duration-200"

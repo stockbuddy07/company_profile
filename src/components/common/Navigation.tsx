@@ -1,10 +1,10 @@
 import Link from 'next/link';
 
 const navigationItems = [
-  { name: 'Reputation', href: '#reputation' },
+  { name: 'Team', href: '#reputation' },
   { name: 'Solution', href: '#solution' },
-  { name: 'Products', href: '#products' },
-  { name: 'Docs', href: 'https://docs.myzscore.ai/' },
+  { name: 'Projects', href: '#projects' },
+  { name: 'Docs', href: '#docs' }, 
 ];
 
 export default function Navigation() {
