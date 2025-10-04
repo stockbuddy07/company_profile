@@ -1,0 +1,100 @@
+/* src/app/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    font-family: 'Clash Display', sans-serif;
+    --background: 252 252 252; /* #FCFCFC - page background */
+    --background_secondary: 245 244 255; /* #F5F4FF - card/surface background */
+    --foreground: 26 26 26; /* #1A1A1A - nearly black text */
+    --card: 245 244 255; /* #F5F4FF - card/surface background */
+    --primary: 26 26 26; /* #1A1A1A - nearly black text */
+    --secondary: 110 110 110; /* #6E6E6E - secondary/muted text */
+    --cta: 155 97 255; /* #9B61FF - purple accent */
+    --warning: 255 171 64; /* #FFAB40 */
+    --border: 229 231 235; /* #e5e7eb */
+  }
+
+  .dark {
+    font-family: 'Clash Display', sans-serif;
+    --background: 30 31 41; /* #1E1F29 - page background */
+    --background_secondary: 42 43 56; /* #2A2B38 - card/surface background */
+    --foreground: 234 234 234; /* #EAEAEA - light text */
+    --card: 42 43 56; /* #2A2B38 - card/surface background */
+    --primary: 234 234 234; /* #EAEAEA - light text */
+    --secondary: 154 154 154; /* #9A9A9A - secondary/muted text */
+    --cta: 155 97 255; /* #9B61FF - purple accent */
+    --warning: 255 171 64; /* #FFAB40 */
+    --border: 51 51 51; /* #333333 */
+  }
+}
+
+@layer base {
+  * {
+    border-color: rgb(var(--border));
+  }
+  body {
+    @apply bg-white text-primary;
+    font-family: 'Clash Display', sans-serif;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Font smoothing */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ZScore Main Header Styling */
+.zscore-main-header {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Sticky header enhancements */
+@supports (backdrop-filter: blur(10px)) {
+  .zscore-header-container .backdrop-blur-md {
+    backdrop-filter: blur(12px);
+  }
+}
+
+/* Enhanced shadow for ZScore header container */
+.zscore-header-container .shadow-lg {
+  box-shadow:
+    0 10px 25px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* ZScore mobile menu styling */
+.zscore-mobile-menu {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Prevent content jump when ZScore header becomes sticky */
+body {
+  scroll-padding-top: 80px;
+}
