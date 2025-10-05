@@ -4,7 +4,7 @@ const navigationItems = [
   { name: 'Solution', href: '#reputation' },
   { name: 'Team', href: '#solution' },
   { name: 'Projects', href: '#products' },
-  { name: 'Docs', href: 'https://docs.aeom.ai/' },
+  { name: 'Docs', href: '#docs' }, 
 ];
 
 export default function Navigation() {

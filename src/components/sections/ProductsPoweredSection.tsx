@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion';
 import { useRef } from 'react';
 import Image from 'next/image';
-import { ShinyButton } from '@/components/ui/shiny-button';
 
 const productCards = [
   {
@@ -84,60 +83,12 @@ export default function ProductsPoweredSection() {
             // initial={{ opacity: 0, y: 20 }}
             // whileInView={{ opacity: 1, y: 0 }}
             // transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-semibold text-primary mb-8 leading-tight"
+            className="text-4xl md:text-6xl lg:text-7xl font-semibold text-primary mb-16 leading-tight"
           >
             Products Powered by
             <br />
             <span className="text-cta">NoBuddy</span>
           </motion.h2>
-
-          {/* Scroll Up Button */}
-          <div className="mb-10">
-            <motion.button
-              initial={{ "--x": "100%", scale: 0.8 }}
-              animate={{ "--x": "-100%", scale: 1 }}
-              whileTap={{ scale: 0.95 }}
-              transition={{
-                repeat: Infinity,
-                repeatType: "loop",
-                repeatDelay: 1,
-                type: "spring",
-                stiffness: 20,
-                damping: 15,
-                mass: 2,
-                scale: {
-                  type: "spring",
-                  stiffness: 200,
-                  damping: 5,
-                  mass: 0.5,
-                },
-              }}
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="relative rounded-lg px-16 py-8 font-medium backdrop-blur-xl transition-shadow duration-300 ease-in-out hover:shadow dark:bg-[radial-gradient(circle_at_50%_0%,hsl(var(--primary)/10%)_0%,transparent_60%)] dark:hover:shadow-[0_0_20px_hsl(var(--primary)/10%)] overflow-hidden"
-            >
-              <motion.div
-                className="absolute inset-0 bg-[url('/images/trust-proof/urvashi.avif')] bg-center bg-no-repeat opacity-20"
-                animate={{ x: [-100, 100] }}
-                transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-              />
-              <span
-                className="relative block size-full text-xl uppercase tracking-wide text-[rgb(0,0,0,65%)] dark:font-light dark:text-[rgb(255,255,255,90%)] z-10"
-                style={{
-                  maskImage:
-                    "linear-gradient(-75deg,hsl(var(--primary)) calc(var(--x) + 20%),transparent calc(var(--x) + 30%),hsl(var(--primary)) calc(var(--x) + 100%))",
-                }}
-              >
-                Scroll Up
-              </span>
-              <span
-                style={{
-                  mask: "linear-gradient(rgb(0,0,0), rgb(0,0,0)) content-box,linear-gradient(rgb(0,0,0), rgb(0,0,0))",
-                  maskComposite: "exclude",
-                }}
-                className="absolute inset-0 z-10 block rounded-[inherit] bg-[linear-gradient(-75deg,hsl(var(--primary)/10%)_calc(var(--x)+20%),hsl(var(--primary)/50%)_calc(var(--x)+25%),hsl(var(--primary)/10%)_calc(var(--x)+100%))] p-px"
-              ></span>
-            </motion.button>
-          </div>
         </motion.div>
 
         {/* Animated Cards Section */}
@@ -238,17 +189,12 @@ export default function ProductsPoweredSection() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl font-semibold text-primary mb-8 leading-tight"
+            className="text-4xl font-semibold text-primary mb-16 leading-tight"
           >
             Products Powered by
             <br />
             <span className="text-cta">AEOM</span>
           </motion.h2>
-
-          {/* Scroll Up Button */}
-          <div className="mb-8">
-            <ShinyButton className="px-16 py-8 text-xl" onClick={() => window.scrollTo({top:0, behavior:'smooth'})}>Scroll Up</ShinyButton>
-          </div>
         </div>
 
         {/* Mobile Cards */}
@@ -300,7 +246,7 @@ export default function ProductsPoweredSection() {
                 </div>
                 </div>
 
-                {/* Learn More Button for NoBuddy */}
+                {/* Learn More Button for ZERU */}
                 {card.hasLearnMore && (
                   <div>
                     <a
@@ -322,8 +268,6 @@ export default function ProductsPoweredSection() {
           ))}
         </div>
       </div>
-
-     
     </section>
   );
 }

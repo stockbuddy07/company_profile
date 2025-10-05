@@ -19,13 +19,13 @@ export default function Footer() {
 
           {/* Section 2: NoBuddy */}
           <div className="flex flex-col gap-3">
-            <h3 className="text-base font-medium text-primary uppercase tracking-wide">NoBuddy</h3>
+            <h3 className="text-base font-medium text-secondary uppercase tracking-wide">NoBuddy</h3>
             <div className="flex flex-col gap-1 font-medium text-base text-primary">
               <a href="#reputation" className="hover:text-cta transition-colors duration-200">
-                Solution
+                Reputation
               </a>
               <a href="#solution" className="hover:text-cta transition-colors duration-200">
-                Team
+                Solution
               </a>
               <a href="#products" className="hover:text-cta transition-colors duration-200">
                 Products
@@ -35,19 +35,33 @@ export default function Footer() {
 
           {/* Section 3: Community */}
           <div className="flex flex-col gap-3">
-            <h3 className="text-base font-medium text-primary uppercase tracking-wide">
+            <h3 className="text-base font-medium text-secondary uppercase tracking-wide">
               Community
             </h3>
             <div className="flex flex-col gap-1 font-medium text-base text-primary">
-              
-        
+              <a
+                href="https://discord.com/invite/XkYjDGVwJQ"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-cta transition-colors duration-200"
+              >
+                Discord
+              </a>
+              <a
+                href="https://x.com/aeomfinance"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-cta transition-colors duration-200"
+              >
+                Twitter
+              </a>
               <a
                 href="https://t.me/aeomfinancediscussions"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-cta transition-colors duration-200"
               >
-                Instagram
+                Telegram
               </a>
               <a
                 href="https://blog.aeom.finance"
@@ -57,20 +71,12 @@ export default function Footer() {
               >
                 Blog
               </a>
-               <a
-                href="https://blog.aeom.finance"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-cta transition-colors duration-200"
-              >
-                GitHub
-              </a>
             </div>
           </div>
 
           {/* Section 4: Resources */}
           <div className="flex flex-col gap-3">
-            <h3 className="text-base font-medium text-primary uppercase tracking-wide">
+            <h3 className="text-base font-medium text-secondary uppercase tracking-wide">
               Resources
             </h3>
             <div className="flex flex-col gap-1 font-medium text-base text-primary">

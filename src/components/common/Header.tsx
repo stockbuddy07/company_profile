@@ -3,9 +3,17 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
+import Logo from './Logo';
 import Navigation from './Navigation';
 import SocialLinks from './SocialLinks';
 
+const navigationItems = [
+  
+  { name: 'Team', href: '#reputation' },
+  { name: 'Solution', href: '#Solution' },
+  { name: 'Projects', href: '#projects' },
+  { name: 'Docs', href: 'https://docs.aeom.ai/' },
+];
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);

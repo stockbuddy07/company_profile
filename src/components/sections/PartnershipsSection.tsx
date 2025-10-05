@@ -34,9 +34,9 @@ export default function PartnershipsSection() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-3xl md:text-5xl font-semibold text-primary mb-10"
           >
-            Skills <br />
+            Partnerships <br />
             and
-            <span className="text-cta">  Technologies</span>
+            <span className="text-cta"> Integrations</span>
           </motion.h2>
         </div>
 
@@ -60,7 +60,7 @@ export default function PartnershipsSection() {
                 <div key={index} className="flex-shrink-0">
                   <Image
                     src="/images/partners/partners.png"
-                    alt="Skills and Technologiesiesys"
+                    alt="Partners and Integrations"
                     width={1200}
                     height={120}
                     className="h-12 md:h-14 w-auto object-contain"
@@ -88,7 +88,7 @@ export default function PartnershipsSection() {
                 <div key={index} className="flex-shrink-0">
                   <Image
                     src="/images/partners/partners.png"
-                    alt="Skills and Technologiesiesys"
+                    alt="Partners and Integrations"
                     width={1200}
                     height={120}
                     className="h-12 md:h-14 w-auto object-contain"
@@ -116,7 +116,7 @@ export default function PartnershipsSection() {
                 <div key={index} className="flex-shrink-0">
                   <Image
                     src="/images/partners/partners.png"
-                    alt="Skills and Technologies"
+                    alt="Partners and Integrations"
                     width={1200}
                     height={120}
                     className="h-12 md:h-14 w-auto object-contain"

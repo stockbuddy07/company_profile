@@ -1,4 +1,4 @@
-- [x] Update Footer.tsx: Change heading text-secondary to text-primary
-- [x] Update Navigation.tsx: Correct navigationItems array
-- [x] Update Header.tsx: Update navigationItems to match Navigation.tsx
-- [x] Test the changes by running the development server
+- [x] Remove the bentoBoxes array from ProductsPoweredSection.tsx
+- [x] Remove the productImages array from ProductsPoweredSection.tsx
+- [x] Remove the desktop bento box rendering section from ProductsPoweredSection.tsx
+- [x] Remove the mobile bento box rendering section from ProductsPoweredSection.tsx
