@@ -157,9 +157,9 @@ export default function TrustProofSection() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="md:text-5xl text-4xl font-semibold mb-4 leading-tight"
             >
-              <span className="text-cta">TEAM MEMBERS</span>
+              <span className="text-cta">Solutions For Every Work</span>
               <br />
-              <span className="text-primary">are Always Ahead of You</span>
+              <span className="text-primary">We are Always Ahead of You</span>
             </motion.h2>
 
             <motion.p

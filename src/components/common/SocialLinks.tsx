@@ -1,4 +1,4 @@
-   import { Send } from 'lucide-react';
+
 
 const GitHubIcon = ({ className }: { className?: string }) => (
   <svg

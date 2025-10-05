@@ -1,11 +1,11 @@
 import Link from 'next/link';
 
-const navigationItems = [
+export const navigationItems = [
   { name: 'Home', href: '#home' },
   { name: 'Solution', href: '#reputation' },
   { name: 'Team', href: '#solution' },
   { name: 'Projects', href: '#products' },
-  { name: 'Docs', href: '#docs' }, 
+  { name: 'Docs', href: 'https://docs.aeom.ai/' },
 ];
 
 export default function Navigation() {

@@ -347,7 +347,7 @@ export default function GetInTouchSection() {
                 &times;
               </button>
               <div className="mb-6 text-center">
-                <span className="inline-block  text-white bg-indigo-200  bg-purple-600 rounded-full px-4 py-1 text-sm font-semibold mb-2">
+                <span className="inline-block  text-white bg-indigo-200  bg-purple-x600 rounded-full px-4 py-1 text-sm font-semibold mb-2">
                   Contact Us
                 </span>
                 <h2 className="text-3xl font-extrabold text-gray-900 mb-2">Let’s Get In Touch.</h2>

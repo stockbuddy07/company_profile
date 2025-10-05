@@ -6,13 +6,7 @@ import { Button } from '@/components/ui/button';
 import Navigation from './Navigation';
 import SocialLinks from './SocialLinks';
 
-const navigationItems = [
-  { name: 'Home', href: '#home' },
-  { name: 'Team', href: '#reputation' },
-  { name: 'Solution', href: '#Solution' },
-  { name: 'Projects', href: '#projects' },
-  { name: 'Docs', href: 'https://docs.aeom.ai/' },
-];
+import { navigationItems } from './Navigation';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -26,7 +20,7 @@ export default function Header() {
       >
         {/* Left section - Logo */}
         <div className="flex justify-start">
-          <img src="/images/logos/logo.avif" alt="Logo" className="w-fit h-12" />
+          <img src="/images/logos/logo.avif" alt="Logo" className="w-fit h-8 md:h-12" />
         </div>
 
         {/* Center section - Navigation */}
@@ -59,7 +53,7 @@ export default function Header() {
           !menuOpen ? 'rounded-4xl' : 'rounded-t-4xl'
         }`}
       >
-        <img src="/images/logos/logo.avif" alt="Logo" className="w-fit h-12" />
+        <img src="/images/logos/logo.avif" alt="Logo" className="w-fit h-8 md:h-12" />
         <div className="">
           {/* Mobile Menu/Close text button */}
           <button
@@ -96,7 +90,7 @@ export default function Header() {
               ))}
             </nav>
             <a
-              href="https://discord.com/invite/XkYjDGVwJQ"
+              href=""
               target="_blank"
               rel="noopener noreferrer"
               className="w-full"
