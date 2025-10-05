@@ -100,15 +100,24 @@ const config: Config = {
   				to: {
   					height: '0'
   				}
-  			}
+  			},
+			'gradient-shift': {
+				'0%, 100%': {
+					'background-position': '0% 50%',
+				},
+				'50%': {
+					'background-position': '100% 50%',
+				},
+			}
   		},
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
-  			'accordion-up': 'accordion-up 0.2s ease-out'
+  			'accordion-up': 'accordion-up 0.2s ease-out',
+			'gradient-shift': 'gradient-shift 5s ease infinite',
   		}
   	}
   },
-  plugins: [require('tailwindcss-animate')],
+   plugins: [require('tailwindcss-animate')],
 } satisfies Config;
 
 export default config;

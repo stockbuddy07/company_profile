@@ -40,14 +40,18 @@ export default function Header() {
           <div className="hidden sm:flex">
             <SocialLinks />
           </div>
-          <a href="https://discord.com/invite/XkYjDGVwJQ" target="_blank" rel="noopener noreferrer">
-            <Button
-              className="hidden md:block bg-cta hover:bg-cta/90 text-white text-sm md:text-base py-4 px-4 md:py-3 md:px-6 rounded-3xl font-medium"
-              variant={'default'}
-            >
-              Get in Touch
-            </Button>
-          </a>
+          <Button
+            className="hidden md:block bg-cta hover:bg-cta/90 text-white text-sm md:text-base py-4 px-4 md:py-3 md:px-6 rounded-3xl font-medium"
+            variant={'default'}
+            onClick={() => {
+              const element = document.getElementById('get-in-touch');
+              if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
+          >
+            Get in Touch
+          </Button>
         </div>
       </div>
       {/* Mobile Header */}
