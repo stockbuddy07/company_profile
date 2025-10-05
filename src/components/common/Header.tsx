@@ -3,12 +3,11 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import Logo from './Logo';
 import Navigation from './Navigation';
 import SocialLinks from './SocialLinks';
 
 const navigationItems = [
-  
+  { name: 'Home', href: '#home' },
   { name: 'Team', href: '#reputation' },
   { name: 'Solution', href: '#Solution' },
   { name: 'Projects', href: '#projects' },
