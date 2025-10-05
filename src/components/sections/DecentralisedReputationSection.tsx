@@ -61,7 +61,7 @@ const teamMemberData = [
     id: 4,
     name: 'Shubham Sharma',
     position: 'Complete Web & Mobile Solutions',
-    profilePic: '/images/team/shubham.jpg ',
+    profilePic: 'public/images/team/shubham.jpg',
     description: 'Shubham delivers end-to-end solutions, seamlessly connecting front-end experiences with powerful back-end and mobile platforms.',
     socials: [
       { name: 'Instagram', url: 'https://instagram.com/demo' },
