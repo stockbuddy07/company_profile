@@ -7,16 +7,16 @@ import Image from 'next/image';
 export default function PartnershipsSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
 
-  const marqueeTime = 30;
+  const marqueeTime = 15;
 
   return (
     <section
       ref={sectionRef}
-      className="relative bg-white py-24 min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative bg-white py-4 min-h-screen flex items-center justify-center overflow-hidden"
     >
       <div className="px-0">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

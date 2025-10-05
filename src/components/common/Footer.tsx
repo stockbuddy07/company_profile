@@ -44,7 +44,7 @@ export default function Footer() {
             <div className="flex flex-col gap-2 font-medium text-base text-primary">
               
               <a
-                href="https://instagram.com/ayushgajjar.exe"
+                href="https://www.instagram.com/_nobuddy07/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-cta transition-colors duration-200"
@@ -52,7 +52,7 @@ export default function Footer() {
                 Instagram
               </a>
                <a
-                href="https://instagram.com/ayushgajjar.exe"
+                href="https://www.instagram.com/_nobuddy07/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-cta transition-colors duration-200"

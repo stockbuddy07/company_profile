@@ -27,7 +27,7 @@ export default function GetInTouchSection() {
     <div id="get-in-touch" className="min-h-screen flex items-center justify-center">
       <section
         ref={sectionRef}
-        className="relative w-full h-[700px] md:h-[860px] bg-[#02c3a0] overflow-hidden flex items-center justify-center"
+        className="relative w-full h-[700px] md:h-[860px] bg-[#02c3a0] overflow-hidden flex items-center justify-center mt-0"
       >
         {/* Marquee Background Lines - Covering whole page */}
         <div className="absolute inset-0 w-full h-full">

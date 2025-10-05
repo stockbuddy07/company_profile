@@ -119,15 +119,6 @@ export default function TrustProofSection() {
   // SCROLL OFFSETS:
   // With justify-center, the container is centered, so we need to adjust for that
 
-  // To center the first card: move container left by (total width - card width) / 2
-  const firstCardCenterOffset = -(totalCardsWidth - cardWidth) / 2;
-
-  // To center the last card: move container left by (total width - card width) / 2 + (total width - card width)
-  const lastCardCenterOffset = -(totalCardsWidth - cardWidth) / 2 - (totalCardsWidth - cardWidth);
-
-  // Simplified: lastCardCenterOffset = -(totalCardsWidth - cardWidth) * 1.5
-  const lastCardCenterOffsetSimplified = -(totalCardsWidth - cardWidth) * 1.5;
-
   // Example with 5 cards:
   // Total width = (5 × 384) + (4 × 32) = 1920 + 128 = 2048px
   // First card offset = -(2048 - 384) / 2 = -832px (centers first card)
@@ -207,8 +198,8 @@ export default function TrustProofSection() {
                 </div>
 
                 {/* Image */}
-                <div className="relative w-full h-56 rounded-2xl overflow-hidden">
-                  <Image src={card.image} alt={card.title} fill className="object-cover" />
+                <div className={`relative w-full h-72 rounded-2xl ${card.id === 2 ? 'overflow-visible' : 'overflow-visible md:overflow-hidden'}`}>
+                  <Image src={card.image} alt={card.title} fill className="object-contain object-center" />
                 </div>
               </motion.div>
             ))}
@@ -284,7 +275,7 @@ export default function TrustProofSection() {
                   </div>
 
                   {/* Image */}
-                  <div className="absolute bottom-0 left-0 w-full h-80 justify-end rounded-2xl overflow-x-hidden">
+                  <div className="absolute bottom-0 left-0 w-full h-80 justify-end rounded-2xl overflow-visible">
                     <Image
                       src={card.image}
                       alt={card.title}

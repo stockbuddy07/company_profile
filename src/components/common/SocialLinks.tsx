@@ -41,7 +41,7 @@ export default function SocialLinks() {
       </a>
       <a
         className="text-cta hover:text-white bg-cta/10 hover:bg-cta transition-colors duration-200 rounded-full p-1.5 flex items-center justify-center"
-        href="https://instagram.com/ayushgajjar.exe"
+        href="https://www.instagram.com/_nobuddy07/"
         target="_blank"
         aria-label="Instagram"
       >

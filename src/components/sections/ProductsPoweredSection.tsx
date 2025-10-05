@@ -26,6 +26,7 @@ const productCards = [
     bgColor: '#ffecfe',
     textColor: '#c929cb',
     image: '/images/products/smartpg-ayush.png',
+    hasLearnMore: true,
   },
   {
     id: 3,
@@ -193,7 +194,7 @@ export default function ProductsPoweredSection() {
           >
             Products Powered by
             <br />
-            <span className="text-cta">AEOM</span>
+            <span className="text-cta">NoBuddy</span>
           </motion.h2>
         </div>
 
@@ -246,11 +247,11 @@ export default function ProductsPoweredSection() {
                 </div>
                 </div>
 
-                {/* Learn More Button for ZERU */}
+                {/* Learn More Button for NoBudd */}
                 {card.hasLearnMore && (
-                  <div>
+                  <div className="flex justify-center">
                     <a
-                      className="mt-6 px-8 py-3 rounded-full font-medium transition-all duration-300"
+                      className="mt-2 mb-2 px-8 py-3 rounded-full font-medium transition-all duration-300"
                       style={{
                         backgroundColor: card.textColor,
                         color: 'white',

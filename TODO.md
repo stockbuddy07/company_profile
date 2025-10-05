@@ -1,4 +1,1 @@
-- [x] Remove the bentoBoxes array from ProductsPoweredSection.tsx
-- [x] Remove the productImages array from ProductsPoweredSection.tsx
-- [x] Remove the desktop bento box rendering section from ProductsPoweredSection.tsx
-- [x] Remove the mobile bento box rendering section from ProductsPoweredSection.tsx
+Reverted all updates to TrustProofSection.tsx as per user request.
