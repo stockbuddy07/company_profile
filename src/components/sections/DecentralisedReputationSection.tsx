@@ -75,7 +75,7 @@ const teamMemberData = [
     id: 5,
     name: 'Devang Kheni',
     position: 'Intuitive User-Centric Design (UI/UX)',
-    profilePic: '/images/team/devang.jpg', 
+    profilePic: '/images/team/ddevang.jpg', 
     description: 'Devang is passionate about creating intuitive, user-centric designs that bridge the gap between user needs and business goals.',
     socials: [
       { name: 'Instagram', url: 'https://instagram.com/demo' },
