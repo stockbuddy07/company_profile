@@ -30,6 +30,18 @@ const productCards = [
   },
   {
     id: 3,
+    badge: 'Digetal Posters',
+    title: 'Digetal Posters, a mobile platform for effortless poster creation and sharing',
+    description:
+      ' Developed a cross-platform app enabling users to design, schedule, and publish digital posters, architected with a scalable backend to support real-time collaboration for 500+ users.',
+  // New light-friendly palette for id 3 (distinct from other cards)
+  bgColor: '#eefaf6',
+  textColor: '#0f766e',
+    image: '/images/products/Untitled design-Photoroom.png',
+    hasLearnMore: true,
+  },
+  {
+    id: 4,
     badge: 'Invento',
     title: 'Stay ahead with real-time stock tracking and smart ordering.!!',
     description: 'The process of tracking and controlling stock to ensure the right products are available when needed, while minimizing costs. ',
@@ -39,7 +51,7 @@ const productCards = [
     hasLearnMore: true,
   },
   {
-    id: 4,
+    id: 5,
     badge: 'Vintage Hub E-Commerce',
     title: 'Storefront with categories and products & Deployment Ready !!',
     description: 'Ecommerce Platform for a Local Shop Handling Whole Business online !',
@@ -154,13 +166,13 @@ export default function ProductsPoweredSection() {
                 </div>
 
                 {/* Image */}
-                <div className="flex-shrink-0 w-1/2">
-                  <div className="relative aspect-[4/3] rounded-3xl shadow-2xl">
+                <div className={card.id === 3 ? "flex-shrink-0 w-3/5" : "flex-shrink-0 w-1/2"}>
+                  <div className={card.id === 3 ? "relative aspect-[4/3] rounded-3xl shadow-2xl overflow-hidden" : "relative aspect-[4/3] rounded-3xl shadow-2xl"}>
                     <Image
                       src={card.image}
                       alt={`${card.badge} product illustration`}
                       fill
-                      className="object-contain"
+                      className={card.id === 3 ? "object-cover" : "object-contain"}
                     />
                   </div>
                 </div>
@@ -237,12 +249,12 @@ export default function ProductsPoweredSection() {
 
                 {/* Image */}
                 <div className="flex-shrink-0 w-full">
-                <div className={`relative aspect-[4/3] ${card.id === 2 ? "max-w-lg" : "max-w-md"} mx-auto rounded-3xl shadow-2xl`}>
+                <div className={`relative aspect-[4/3] ${card.id === 3 ? "max-w-2xl" : (card.id === 2 ? "max-w-lg" : "max-w-md")} mx-auto rounded-3xl shadow-2xl overflow-hidden`}>
                   <Image
                     src={card.image}
                     alt={`${card.badge} product illustration`}
                     fill
-                    className={card.id === 2 ? "object-cover" : "object-contain"}
+                    className={card.id === 3 ? "object-cover" : (card.id === 2 ? "object-cover" : "object-contain")}
                   />
                 </div>
                 </div>

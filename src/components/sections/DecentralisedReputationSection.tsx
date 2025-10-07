@@ -17,9 +17,9 @@ const teamMemberData = [
      {
     id: 1,
     name: ' Ayush Gajjar',
-    position: 'Agile Process & On-Time Delivery',
+    position: 'Director of Technology & Strategy',
     profilePic: '/images/team/ayush.jpg',
-    description: 'As our project lead || BD , Ayush ensures a transparent, agile process with clear milestones to deliver exceptional results on schedule.',
+    description: 'As Director of Technology & Strategy, Ayush architects the path from idea to polished application, ensuring a seamless, strategic, and precise execution.',
     socials: [
       { name: 'Instagram', url: 'https://instagram.com/demo' },
       { name: 'LinkedIn', url: 'https://www.linkedin.com/in/ayushgajjar123' },
