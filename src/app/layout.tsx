@@ -4,20 +4,30 @@ import './globals.css';
 import Header from '@/components/common/Header';
 
 export const metadata: Metadata = {
-  title: 'NoBuddy - True Reputation Onchain, Without KYC',
+  title: 'NoBuddy - Expert IT Solutions for Business Growth',
   description:
-    'Eigen AVS for reputation, powered by AI. Build your onchain reputation without KYC requirements.',
-  keywords: ['blockchain', 'reputation', 'onchain', 'AI', 'KYC', 'NoBuddy'],
-  authors: [{ name: 'NoBuddy Team' }],
+    'Get custom IT solutions from NoBuddy to drive business growth. We offer expert software development, web design, and consulting services. Contact us today!',
+  keywords: ['IT solutions', 'software development', 'web design', 'mobile app development', 'NoBuddy', 'technology consulting', 'business growth', 'freelance IT', 'custom software', ' IT services'],
+  authors: [{ name: 'NoBuddy' }],
   icons: {
     icon: '/favicon.svg',
   },
   openGraph: {
-    title: 'NoBuddy - True Reputation Onchain, Without KYC',
-    description: 'Eigen AVS for reputation, powered by AI',
+    title: 'NoBuddy - Expert IT Solutions for Business Growth',
+    description: 'Get custom IT solutions from NoBuddy to drive business growth. We offer expert software development, web design, and consulting services. Contact us today!',
     type: 'website',
+    url: 'https://nobuddy07.netlify.app/',
+    siteName: 'NoBuddy',
+    images: ["https://www.instagram.com/_nobuddy07/"]
   },
+  twitter: {
+    title: 'NoBuddy - Expert IT Solutions for Business Growth',
+    description: 'Get custom IT solutions from NoBuddy to drive business growth. We offer expert software development, web design, and consulting services. Contact us today!',
+    creator: '@_nobuddy07',
+  }
 };
+
+
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

@@ -251,7 +251,7 @@ export default function ProductsPoweredSection() {
                 </p>
 
                 {/* Image */}
-                <div className="flex-shrink-0 w-full">
+                <div className="flex-shrink-0 w-full">  
                 <div className={`relative aspect-[4/3] ${card.id === 2 ? "max-w-lg" : "max-w-md"} mx-auto rounded-3xl shadow-2xl overflow-hidden`}>
                   <Image
                     src={card.image}

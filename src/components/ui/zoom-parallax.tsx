@@ -1,28 +1,38 @@
 'use client';
 
-import React from 'react';
-
-interface Image {
-  src: string;
-  alt: string;
-}
+import React, { useState, useEffect, ReactNode } from 'react';
 
 interface ZoomParallaxProps {
-  images: Image[];
+  children: ReactNode;
+  zoomSpeed?: number;
 }
 
-export function ZoomParallax({ images }: ZoomParallaxProps) {
+export function ZoomParallax({ children, zoomSpeed = 0.01 }: ZoomParallaxProps) {
+  const [zoom, setZoom] = useState(1);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      setZoom(1 + scrollY * zoomSpeed);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [zoomSpeed]);
+
   return (
     <div className="relative w-full h-96 overflow-hidden">
-      {images.map((image, index) => (
-        <img
-          key={index}
-          src={image.src}
-          alt={image.alt}
-          className="absolute inset-0 w-full h-full object-cover"
-          style={{ zIndex: index }}
-        />
-      ))}
+      <div
+        style={{
+          transform: `scale(${zoom})`,
+          transition: 'transform 0.1s ease-out',
+        }}
+      >
+        {children}
+      </div>
     </div>
   );
 }
