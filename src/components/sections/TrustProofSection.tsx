@@ -1,7 +1,7 @@
 'use client';
 
-import { motion, useScroll, useTransform, useAnimation, useInView } from 'framer-motion';
-import { useRef, useEffect } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
 import Image from 'next/image';
 
 /**
@@ -37,129 +37,65 @@ const trustProofCards = [
   {
     id: 1,
     number: '01',
-    title: 'AI-Enhanced Strategy & Workflow',
-    description: 'We leverage AI for intelligent planning, code optimization, and efficient workflows, delivering superior results faster.',
+    title: 'But Bot Farms Take 90% of the Pool, and you Only Get $3',
+    description: 'You farm an airdrop for 5 months straight',
     bgColor: 'bg-[#f4f1fb]',
     textColor: 'text-cta',
     numberBg: 'bg-purple-200',
-    image: '/images/trust-proof/ai.avif',
+    image: '/images/trust-proof/benifits5.avif',
   },
   {
     id: 2,
     number: '02',
-    title: 'Intuitive User-Centric Design (UI/UX)',
-    description: 'Our design process focuses on creating beautiful, intuitive, and memorable experiences that keep your users engaged.',
+    title: 'But the Founder is a Serial Rug-Puller, and you Lose Everything',
+    description: 'You invest in a token, that is promised to make 1000x',
     bgColor: 'bg-[#ffecfe]',
     textColor: 'text-[#c929cb]',
     numberBg: 'bg-pink-200',
-    image: '/images/trust-proof/ayush.png',
+    image: '/images/trust-proof/benifits7.avif',
   },
   {
     id: 3,
     number: '03',
-    title: 'Pixel-Perfect Frontend Development',
-    description: 'We bring designs to life with clean, responsive, and high-performance code that looks stunning on any device.',
+    title: 'But you Get no Benefits for this, and Still Pay the 1% Fee',
+    description: 'You use a DEX for 8 months EVERY single day',
+
     bgColor: 'bg-[#f6f7fc]',
     textColor: 'text-[#4fa1ce]',
     numberBg: 'bg-blue-200',
-    image: '/images/trust-proof/premal.avif',
+    image: '/images/trust-proof/benifits6.avif',
   },
   {
     id: 4,
     number: '04',
-    title: 'Robust & Scalable Backend Systems',
-    description: 'Building the secure and powerful server-side architecture your application needs to handle growth and succeed.',
+    title: "Even Though you've Never Defaulted on your Aave Position",
+    description: "You're depositing 150% collateral",
     bgColor: 'bg-[#f0f9f7]',
     textColor: 'text-[#00aa8b]',
     numberBg: 'bg-green-200',
-    image: '/images/trust-proof/urvashi.avif',
+    image: '/images/trust-proof/benifits9.avif',
   },
   {
     id: 5,
     number: '05',
-    title: 'Complete Web & Mobile Solutions',
-    description: 'From web apps to iOS & Flutter, our full-stack and mobile experts build cohesive, end-to-end digital products.',
-    bgColor: 'bg-[#fdf8e9]',
-    textColor: 'text-[#f5a623]',
-    numberBg: 'bg-yellow-200',
-    image: '/images/trust-proof/benifits8.avif',
-  },
-  {
-    id: 6,
-    number: '06',
-    title: 'Agile Process & On-Time Delivery',
-    description: 'We use an agile methodology with clear milestones, regular updates, and rigorous testing to deliver your project on schedule and to the highest standard.',
+    title: 'But Have the Same Funding Rates, as the DEGEN who YOLOs Every Single Time',
+    description: 'You never got liquidated in a perpetual DEX, and always play safe',
     bgColor: 'bg-[#f9f9f9]',
     textColor: 'text-[#666666]',
-    numberBg: 'bg-gray-200',
-    image: '/images/trust-proof/devang.avif', 
+    numberBg: 'bg-teal-200',
+    image: '/images/trust-proof/benifits8.avif',
   },
+  // {
+  //   id: 6,
+  //   number: '06',
+  //   title: 'But Have the Same Funding Rates, as the DEGEN who YOLOs Every Single Time',
+  //   description: 'You never got liquidated in a perpetual DEX, and always play safe',
+  //   bgColor: 'bg-[#f9f9f9]',
+  //   textColor: 'text-[#666666]',
+  //   numberBg: 'bg-teal-200',
+  //   image: '/images/trust-proof/benifits8.avif',
+  // },
 ];
-
-// Mobile card sub-component: handles its own intersection observer and animation controls
-function MobileTrustCard({ card, index }: { card: typeof trustProofCards[number]; index: number }) {
-  const ref = useRef<HTMLDivElement | null>(null);
-  const controls = useAnimation();
-  const inView = useInView(ref, { amount: 0.25 });
-
-  useEffect(() => {
-    // Play forward when in view, play reverse when out of view
-    if (inView) {
-      controls.start('visible');
-    } else {
-      controls.start('hidden');
-    }
-  }, [inView, controls]);
-
-  const variants = {
-    hidden: {
-      opacity: 0,
-      x: index % 2 === 0 ? -120 : 120,
-      y: -120,
-      // softer spring for smoother exit
-      transition: { type: 'spring', stiffness: 60, damping: 16, mass: 0.8 },
-    },
-    visible: {
-      opacity: 1,
-      x: 0,
-      y: 0,
-      // match spring for a consistent feel; slightly smaller stagger
-      transition: { type: 'spring', stiffness: 60, damping: 16, mass: 0.8, delay: index * 0.06 },
-    },
-  } as const;
-
-  return (
-    <motion.div
-      ref={ref}
-      initial="hidden"
-      animate={controls}
-      variants={variants}
-      className={`${card.bgColor} rounded-3xl px-6 pt-6 w-full h-auto flex flex-col relative overflow-hidden shadow-lg`}
-    >
-      {/* Number badge */}
-      <div
-        className={`bg-background w-10 h-10 rounded-full flex items-center justify-center text-base font-bold ${card.textColor} mb-6`}
-      >
-        {card.number}
-      </div>
-
-      {/* Content */}
-      <div className="flex-1 flex flex-col mb-6">
-        <h3 className={`${card.textColor} text-2xl font-semibold mb-4`}>{card.title}</h3>
-        <p className={`${card.textColor} text-base leading-relaxed`}>{card.description}</p>
-      </div>
-
-      {/* Image */}
-      <div
-        className={`relative w-full h-72 rounded-2xl ${
-          card.id === 2 ? 'overflow-visible' : 'overflow-visible md:overflow-hidden'
-        }`}
-      >
-        <Image src={card.image} alt={card.title} fill className="object-contain object-center" />
-      </div>
-    </motion.div>
-  );
-}
 
 export default function TrustProofSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -172,12 +108,25 @@ export default function TrustProofSection() {
   // These calculations ensure center-to-center scrolling regardless of card count
 
   // Card dimensions (must match Tailwind classes: w-96 = 384px, gap-8 = 32px)
-  // const cardWidth = 384; // w-96 in Tailwind
-  // const cardGap = 32; // gap-8 in Tailwind
-  // totalCardsWidth was previously calculated here if needed for pixel-perfect offsets
+  const cardWidth = 384; // w-96 in Tailwind
+  const cardGap = 32; // gap-8 in Tailwind
+
+  // Calculate total width of all cards including gaps
+  // Formula: (number of cards × card width) + ((number of cards - 1) × gap)
+  const totalCardsWidth =
+    trustProofCards.length * cardWidth + (trustProofCards.length - 1) * cardGap;
 
   // SCROLL OFFSETS:
   // With justify-center, the container is centered, so we need to adjust for that
+
+  // To center the first card: move container left by (total width - card width) / 2
+  const firstCardCenterOffset = -(totalCardsWidth - cardWidth) / 2;
+
+  // To center the last card: move container left by (total width - card width) / 2 + (total width - card width)
+  const lastCardCenterOffset = -(totalCardsWidth - cardWidth) / 2 - (totalCardsWidth - cardWidth);
+
+  // Simplified: lastCardCenterOffset = -(totalCardsWidth - cardWidth) * 1.5
+  const lastCardCenterOffsetSimplified = -(totalCardsWidth - cardWidth) * 1.5;
 
   // Example with 5 cards:
   // Total width = (5 × 384) + (4 × 32) = 1920 + 128 = 2048px
@@ -190,7 +139,7 @@ export default function TrustProofSection() {
   // const x = useTransform(scrollYProgress, [0, 1], [firstCardCenterOffset, lastCardCenterOffsetSimplified]);
 
   // Control when the section becomes sticky
- const opacity = useTransform(scrollYProgress, [0, 0.1, 0.9, 1], [0, 1, 1, 0]);
+  const opacity = useTransform(scrollYProgress, [0, 0.1, 0.9, 1], [0, 1, 1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.1, 0.9, 1], [0.8, 1, 1, 0.8]);
 
   return (
@@ -217,9 +166,9 @@ export default function TrustProofSection() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="md:text-5xl text-4xl font-semibold mb-4 leading-tight"
             >
-              <span className="text-cta">Solutions For Every Work</span>
+              <span className="text-cta">Bots & Scammers</span>
               <br />
-              <span className="text-primary">We are Always Ahead of You</span>
+              <span className="text-primary">are Always Ahead of You</span>
             </motion.h2>
 
             <motion.p
@@ -228,14 +177,40 @@ export default function TrustProofSection() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-sm md:text-base text-primary font-normal max-w-2xl mx-auto"
             >
-              That is why it needs to be easy to prove that you can be trusted
+              That's why it needs to be easy to prove that you can be trusted
             </motion.p>
           </div>
 
-          {/* Mobile Cards - Vertical Stack (each card manages its own in/out animation) */}
+          {/* Mobile Cards - Vertical Stack */}
           <div className="space-y-8">
             {trustProofCards.map((card, index) => (
-              <MobileTrustCard key={card.id} card={card} index={index} />
+              <motion.div
+                key={card.id}
+                initial={{ opacity: 0, y: 70 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                className={`${card.bgColor} rounded-3xl px-6 pt-6 w-full h-auto flex flex-col relative overflow-hidden`}
+              >
+                {/* Number badge */}
+                <div
+                  className={`bg-background w-10 h-10 rounded-full flex items-center justify-center text-base font-bold ${card.textColor} mb-6`}
+                >
+                  {card.number}
+                </div>
+
+                {/* Content */}
+                <div className="flex-1 flex flex-col mb-6">
+                  <h3 className={`${card.textColor} text-2xl font-semibold mb-4`}>{card.title}</h3>
+                  <p className={`${card.textColor} text-base leading-relaxed`}>
+                    {card.description}
+                  </p>
+                </div>
+
+                {/* Image */}
+                <div className="relative w-full h-56 rounded-2xl overflow-hidden">
+                  <Image src={card.image} alt={card.title} fill className="object-cover" />
+                </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -266,10 +241,9 @@ export default function TrustProofSection() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="md:text-5xl text-4xl font-semibold mb-4 leading-tight"
             >
-              <span className="text-cta">Solutions For Every Work</span>
-              
+              <span className="text-cta">Bots & Scammers</span>
               <br />
-              <span className="text-primary">We Are Always Ahead of You</span>
+              <span className="text-primary">are Always Ahead of You</span>
             </motion.h2>
 
             <motion.p
@@ -278,7 +252,7 @@ export default function TrustProofSection() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-sm md:text-base text-primary font-normal max-w-3xl mx-auto"
             >
-              That is why it needs to be easy to prove that you can be trusted
+              That's why it needs to be easy to prove that you can be trusted
             </motion.p>
           </div>
 
@@ -309,7 +283,7 @@ export default function TrustProofSection() {
                   </div>
 
                   {/* Image */}
-                  <div className="absolute bottom-0 left-0 w-full h-80 justify-end rounded-2xl overflow-visible">
+                  <div className="absolute bottom-0 left-0 w-full h-80 justify-end rounded-2xl overflow-x-hidden">
                     <Image
                       src={card.image}
                       alt={card.title}
