@@ -7,12 +7,7 @@ import Image from 'next/image';
 // ==================================================================
 // == EDIT YOUR TEAM MEMBER INFORMATION AND PICTURES HERE ==
 // ==================================================================
-//
-// Instructions:
-// 1. Replace the placeholder data below with your team's details.
-// 2. For 'profilePic', make sure the path (e.g., '/images/team/your-pic.jpg')
-//    is correct and the image file exists in your project's `/public` folder.
-//
+
 const teamMemberData = [
      {
     id: 1,
@@ -21,7 +16,7 @@ const teamMemberData = [
     profilePic: '/images/team/ayush.jpg',
     description: 'As Director of Technology & Strategy, Ayush architects the path from idea to polished application, ensuring a seamless, strategic, and precise execution.',
     socials: [
-      { name: 'Instagram', url: 'https://instagram.com/demo' },
+      { name: 'Instagram', url: 'https://instagram.com/ayushgajjar.exe' },
       { name: 'LinkedIn', url: 'https://www.linkedin.com/in/ayushgajjar123' },
       { name: 'GitHub', url: 'https://github.com/ayush101x' },
     ],
@@ -36,7 +31,7 @@ const teamMemberData = [
     profilePic: '/images/team/premal.jpg',
     description: 'Premal specializes in building fast, responsive, and scalable front-end applications with a focus on clean code and performance.',
     socials: [
-      { name: 'Instagram', url: 'https://instagram.com/demo' },
+      { name: 'Instagram', url: 'https://instagram.com/premal6114' },
       { name: 'LinkedIn', url: 'https://linkedin.com/in/premal-ariwala' },
       { name: 'GitHub', url: 'https://github.com/Premal-hub' },
     ],
@@ -50,7 +45,7 @@ const teamMemberData = [
     profilePic: '/images/team/urvashi.jpg',
     description: 'Urvashiba architects robust server-side systems and ensures seamless deployment, focusing on security and scalability.',
     socials: [
-      { name: 'Instagram', url: 'https://instagram.com/demo' },
+      { name: 'Instagram', url: 'https://instagram.com/ranaba_04' },
       { name: 'LinkedIn', url: 'https://www.linkedin.com/in/urvashibarana04' },
       { name: 'GitHub', url: 'https://github.com/urvashibarana' },
     ],
@@ -64,7 +59,7 @@ const teamMemberData = [
     profilePic: '/images/team/shubham.jpg',
     description: 'Shubham delivers end-to-end solutions, seamlessly connecting front-end experiences with powerful back-end and mobile platforms.',
     socials: [
-      { name: 'Instagram', url: 'https://instagram.com/demo' },
+      { name: 'Instagram', url: 'https://instagram.com/sharma.shubham.09' },
       { name: 'LinkedIn', url: 'https://www.linkedin.com/in/shubham-sharma-5793122b0/' },
       { name: 'GitHub', url: 'https://github.com/ssharma292003' },
     ],
@@ -78,7 +73,7 @@ const teamMemberData = [
     profilePic: '/images/team/ddevang.jpg', 
     description: 'Devang is passionate about creating intuitive, user-centric designs that bridge the gap between user needs and business goals.',
     socials: [
-      { name: 'Instagram', url: 'https://instagram.com/demo' },
+      { name: 'Instagram', url: 'https://instagram.com/_devang_kheni_' },
       { name: 'LinkedIn', url: 'https://www.linkedin.com/in/ayushgajjar123' },
       { name: 'GitHub', url: 'https://github.com/ayush101x' },
     ],
@@ -90,7 +85,7 @@ const teamMemberData = [
 
 // --- HELPER COMPONENT FOR SOCIAL ICONS ---
 type SocialIconProps = {
-  name: 'GitHub' | 'LinkedIn' | 'Instagram' | 'Twitter';
+  name: 'GitHub' | 'LinkedIn' | 'Instagram';
   className?: string;
 };
 
@@ -112,12 +107,6 @@ const SocialIcon = ({ name, className = 'w-6 h-6' }: SocialIconProps) => {
       <svg className={className} role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
         <title>Instagram</title>
         <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-      </svg>
-    ),
-    Twitter: (
-      <svg className={className} role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
-        <title>Twitter</title>
-        <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
       </svg>
     ),
   };
@@ -183,7 +172,7 @@ export default function DecentralisedReputationSection() {
                     <div className="flex gap-5 mt-auto">
                       {member.socials.map((social) => (
                         <a key={social.name} href={social.url} target="_blank" rel="noopener noreferrer" className={`${member.textColor} transition-opacity hover:opacity-70`}>
-                          <SocialIcon name={social.name as 'GitHub' | 'Twitter' | 'LinkedIn' | 'Instagram'} className="w-7 h-7" />
+                          <SocialIcon name={social.name as 'GitHub' | 'LinkedIn' | 'Instagram'} className="w-7 h-7" />
                         </a>
                       ))}
                     </div>

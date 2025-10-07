@@ -1,7 +1,7 @@
 'use client';
 
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
+import { motion, useScroll, useTransform, useAnimation, useInView } from 'framer-motion';
+import { useRef, useEffect } from 'react';
 import Image from 'next/image';
 
 /**
@@ -96,6 +96,70 @@ const trustProofCards = [
   },
 ];
 
+// Mobile card sub-component: handles its own intersection observer and animation controls
+function MobileTrustCard({ card, index }: { card: typeof trustProofCards[number]; index: number }) {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const controls = useAnimation();
+  const inView = useInView(ref, { amount: 0.25 });
+
+  useEffect(() => {
+    // Play forward when in view, play reverse when out of view
+    if (inView) {
+      controls.start('visible');
+    } else {
+      controls.start('hidden');
+    }
+  }, [inView, controls]);
+
+  const variants = {
+    hidden: {
+      opacity: 0,
+      x: index % 2 === 0 ? -120 : 120,
+      y: -120,
+      // softer spring for smoother exit
+      transition: { type: 'spring', stiffness: 60, damping: 16, mass: 0.8 },
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      y: 0,
+      // match spring for a consistent feel; slightly smaller stagger
+      transition: { type: 'spring', stiffness: 60, damping: 16, mass: 0.8, delay: index * 0.06 },
+    },
+  } as const;
+
+  return (
+    <motion.div
+      ref={ref}
+      initial="hidden"
+      animate={controls}
+      variants={variants}
+      className={`${card.bgColor} rounded-3xl px-6 pt-6 w-full h-auto flex flex-col relative overflow-hidden shadow-lg`}
+    >
+      {/* Number badge */}
+      <div
+        className={`bg-background w-10 h-10 rounded-full flex items-center justify-center text-base font-bold ${card.textColor} mb-6`}
+      >
+        {card.number}
+      </div>
+
+      {/* Content */}
+      <div className="flex-1 flex flex-col mb-6">
+        <h3 className={`${card.textColor} text-2xl font-semibold mb-4`}>{card.title}</h3>
+        <p className={`${card.textColor} text-base leading-relaxed`}>{card.description}</p>
+      </div>
+
+      {/* Image */}
+      <div
+        className={`relative w-full h-72 rounded-2xl ${
+          card.id === 2 ? 'overflow-visible' : 'overflow-visible md:overflow-hidden'
+        }`}
+      >
+        <Image src={card.image} alt={card.title} fill className="object-contain object-center" />
+      </div>
+    </motion.div>
+  );
+}
 
 export default function TrustProofSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -108,13 +172,9 @@ export default function TrustProofSection() {
   // These calculations ensure center-to-center scrolling regardless of card count
 
   // Card dimensions (must match Tailwind classes: w-96 = 384px, gap-8 = 32px)
-  const cardWidth =384; // w-96 in Tailwind
-  const cardGap = 32; // gap-8 in Tailwind
-
-  // Calculate total width of all cards including gaps
-  // Formula: (number of cards × card width) + ((number of cards - 1) × gap)
-  const totalCardsWidth =
-    trustProofCards.length * cardWidth + (trustProofCards.length - 1) * cardGap;
+  // const cardWidth = 384; // w-96 in Tailwind
+  // const cardGap = 32; // gap-8 in Tailwind
+  // totalCardsWidth was previously calculated here if needed for pixel-perfect offsets
 
   // SCROLL OFFSETS:
   // With justify-center, the container is centered, so we need to adjust for that
@@ -130,7 +190,7 @@ export default function TrustProofSection() {
   // const x = useTransform(scrollYProgress, [0, 1], [firstCardCenterOffset, lastCardCenterOffsetSimplified]);
 
   // Control when the section becomes sticky
-  const opacity = useTransform(scrollYProgress, [0, 0.1, 0.9, 1], [0, 1, 1, 0]);
+ const opacity = useTransform(scrollYProgress, [0, 0.1, 0.9, 1], [0, 1, 1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.1, 0.9, 1], [0.8, 1, 1, 0.8]);
 
   return (
@@ -168,40 +228,14 @@ export default function TrustProofSection() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-sm md:text-base text-primary font-normal max-w-2xl mx-auto"
             >
-              That's why it needs to be easy to prove that you can be trusted
+              That is why it needs to be easy to prove that you can be trusted
             </motion.p>
           </div>
 
-          {/* Mobile Cards - Vertical Stack */}
+          {/* Mobile Cards - Vertical Stack (each card manages its own in/out animation) */}
           <div className="space-y-8">
             {trustProofCards.map((card, index) => (
-              <motion.div
-                key={card.id}
-                initial={{ opacity: 0, y: 70 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                className={`${card.bgColor} rounded-3xl px-6 pt-6 w-full h-auto flex flex-col relative overflow-hidden`}
-              >
-                {/* Number badge */}
-                <div
-                  className={`bg-background w-10 h-10 rounded-full flex items-center justify-center text-base font-bold ${card.textColor} mb-6`}
-                >
-                  {card.number}
-                </div>
-
-                {/* Content */}
-                <div className="flex-1 flex flex-col mb-6">
-                  <h3 className={`${card.textColor} text-2xl font-semibold mb-4`}>{card.title}</h3>
-                  <p className={`${card.textColor} text-base leading-relaxed`}>
-                    {card.description}
-                  </p>
-                </div>
-
-                {/* Image */}
-                <div className={`relative w-full h-72 rounded-2xl ${card.id === 2 ? 'overflow-visible' : 'overflow-visible md:overflow-hidden'}`}>
-                  <Image src={card.image} alt={card.title} fill className="object-contain object-center" />
-                </div>
-              </motion.div>
+              <MobileTrustCard key={card.id} card={card} index={index} />
             ))}
           </div>
         </div>
@@ -244,7 +278,7 @@ export default function TrustProofSection() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-sm md:text-base text-primary font-normal max-w-3xl mx-auto"
             >
-              That's why it needs to be easy to prove that you can be trusted
+              That is why it needs to be easy to prove that you can be trusted
             </motion.p>
           </div>
 

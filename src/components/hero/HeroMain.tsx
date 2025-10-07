@@ -1,7 +1,6 @@
 'use client';
 
 import HeroSection from '@/components/hero/HeroSection';
-import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import Lottie from 'lottie-react';
 import { useEffect, useState } from 'react';
@@ -67,6 +66,7 @@ export default function HeroMain() {
         )}
       </div>
 
+      {/* button below the tree */}
       <div className="relative z-10 flex-1 flex-col">
         <HeroSection />
         {/* <div className="bottom-12 w-full flex justify-center">

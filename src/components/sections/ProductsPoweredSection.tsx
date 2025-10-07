@@ -25,20 +25,22 @@ const productCards = [
       'Engineered a cross-platform mobile app to streamline PG management, architecting a Firebase backend to support real-time data sync for 500+ simulated users.',
     bgColor: '#ffecfe',
     textColor: '#c929cb',
-    image: '/images/products/smartpg-ayush.png',
+    image: '/images/products/smartpg-team.png',
     hasLearnMore: true,
+    link: '',
   },
   {
     id: 3,
-    badge: 'Digetal Posters',
-    title: 'Digetal Posters, a mobile platform for effortless poster creation and sharing',
+    badge: 'Digital Posters',
+    title: 'Digital Posters, a mobile platform for effortless poster creation and sharing',
     description:
       ' Developed a cross-platform app enabling users to design, schedule, and publish digital posters, architected with a scalable backend to support real-time collaboration for 500+ users.',
   // New light-friendly palette for id 3 (distinct from other cards)
   bgColor: '#eefaf6',
   textColor: '#0f766e',
-    image: '/images/products/Untitled design-Photoroom.png',
+    image: '/images/products/digital_poster--team.png',
     hasLearnMore: true,
+    link: '',
   },
   {
     id: 4,
@@ -49,6 +51,7 @@ const productCards = [
     textColor: '#9B61FF',
     image: '/images/products/invento-ayush.jpg',
     hasLearnMore: true,
+    link: '',
   },
   {
     id: 5,
@@ -59,7 +62,7 @@ const productCards = [
     textColor: '#D32F2F',
     image: '/images/products/vintage-ayush.jpg',
     hasLearnMore: true,
-    link: 'https://aeom.financex',
+    link: '',
   },
 ];
 
@@ -166,13 +169,13 @@ export default function ProductsPoweredSection() {
                 </div>
 
                 {/* Image */}
-                <div className={card.id === 3 ? "flex-shrink-0 w-3/5" : "flex-shrink-0 w-1/2"}>
-                  <div className={card.id === 3 ? "relative aspect-[4/3] rounded-3xl shadow-2xl overflow-hidden" : "relative aspect-[4/3] rounded-3xl shadow-2xl"}>
+                <div className="flex-shrink-0 w-1/2">
+                  <div className="relative aspect-[4/3] rounded-3xl shadow-2xl">
                     <Image
                       src={card.image}
                       alt={`${card.badge} product illustration`}
                       fill
-                      className={card.id === 3 ? "object-cover" : "object-contain"}
+                      className="object-contain"
                     />
                   </div>
                 </div>
@@ -249,12 +252,12 @@ export default function ProductsPoweredSection() {
 
                 {/* Image */}
                 <div className="flex-shrink-0 w-full">
-                <div className={`relative aspect-[4/3] ${card.id === 3 ? "max-w-2xl" : (card.id === 2 ? "max-w-lg" : "max-w-md")} mx-auto rounded-3xl shadow-2xl overflow-hidden`}>
+                <div className={`relative aspect-[4/3] ${card.id === 2 ? "max-w-lg" : "max-w-md"} mx-auto rounded-3xl shadow-2xl overflow-hidden`}>
                   <Image
                     src={card.image}
                     alt={`${card.badge} product illustration`}
                     fill
-                    className={card.id === 3 ? "object-cover" : (card.id === 2 ? "object-cover" : "object-contain")}
+                    className={card.id === 2 ? "object-cover" : "object-contain"}
                   />
                 </div>
                 </div>

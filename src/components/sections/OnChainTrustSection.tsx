@@ -36,7 +36,7 @@ export default function OnChainTrustSection() {
             {textLines.map((line, index) => (
               <motion.h2
                 key={index}
-                className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight text-cta"
+                className="text-4xl md:text-4xl lg:text-7xl font-bold leading-snug text-cta"
               >
                 {line}
               </motion.h2>

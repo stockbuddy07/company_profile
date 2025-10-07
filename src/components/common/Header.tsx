@@ -20,7 +20,23 @@ export default function Header() {
       >
         {/* Left section - Logo */}
         <div className="flex justify-start">
-          <img src="/images/logos/logo.avif" alt="Logo" className="w-fit h-8 md:h-12" />
+          <a
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              if (typeof window !== 'undefined') {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }
+            }}
+            aria-label="Scroll to top"
+            title="Go to top"
+          >
+            <img
+              src="/images/logos/logo.avif"
+              alt="Logo"
+              className="h-10 md:h-14 w-auto object-contain max-w-[140px] md:max-w-[180px] cursor-pointer"
+            />
+          </a>
         </div>
 
         {/* Center section - Navigation */}
@@ -53,7 +69,23 @@ export default function Header() {
           !menuOpen ? 'rounded-4xl' : 'rounded-t-4xl'
         }`}
       >
-        <img src="/images/logos/logo.avif" alt="Logo" className="w-fit h-8 md:h-12" />
+        <a
+          href="#"
+          onClick={(e) => {
+            e.preventDefault();
+            if (typeof window !== 'undefined') {
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+          }}
+          aria-label="Scroll to top"
+          title="Go to top"
+        >
+          <img
+            src="/images/logos/logo.avif"
+            alt="Logo"
+            className="h-10 md:h-14 w-auto object-contain max-w-[140px] md:max-w-[180px] cursor-pointer"
+          />
+        </a>
         <div className="">
           {/* Mobile Menu/Close text button */}
           <button
