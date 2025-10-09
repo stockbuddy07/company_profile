@@ -214,75 +214,82 @@ export default function ProductsPoweredSection() {
         </div>
 
         {/* Mobile Cards */}
-        <div className="space-y-8">
-          {productCards.map((card, index) => (
-            <motion.div
-              key={card.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="relative -mt-12"
+       {/* Mobile Cards */}
+      <div className="space-y-8">
+        {productCards.map((card, index) => (
+          <motion.div
+            key={card.id}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: index * 0.1 }}
+            className="relative -mt-12"
+          >
+            <div
+              className="rounded-4xl py-6 px-4 flex flex-col gap-6 h-full max-w-6xl mx-auto"
+              style={{ backgroundColor: card.bgColor }}
             >
-              <div
-                className="rounded-4xl py-6 px-4 flex flex-col gap-6 h-full max-w-6xl mx-auto"
-                style={{ backgroundColor: card.bgColor }}
-              >
-                {/* Badge */}
-                <div className="inline-block">
-                  <span
-                    className="px-4 py-2 rounded-full text-sm font-medium bg-white"
-                    style={{ color: card.textColor }}
-                  >
-                    {card.badge}
-                  </span>
-                </div>
-
-                {/* Title */}
-                <h3
-                  className="text-2xl font-semibold leading-tight"
+              {/* Badge */}
+              <div className="inline-block">
+                <span
+                  className="px-4 py-2 rounded-full text-sm font-medium bg-white"
                   style={{ color: card.textColor }}
                 >
-                  {card.title}
-                </h3>
+                  {card.badge}
+                </span>
+              </div>
 
-                {/* Description */}
-                <p className="text-sm font-medium" style={{ color: card.textColor }}>
-                  {card.description}
-                </p>
+              {/* Title */}
+              <h3
+                className="text-2xl font-semibold leading-tight"
+                style={{ color: card.textColor }}
+              >
+                {card.title}
+              </h3>
 
-                {/* Image */}
-                <div className="flex-shrink-0 w-full">  
-                <div className={`relative aspect-[4/3] ${card.id === 2 ? "max-w-lg" : "max-w-md"} mx-auto rounded-3xl shadow-2xl overflow-hidden`}>
+              {/* Description */}
+              <p className="text-sm font-medium" style={{ color: card.textColor }}>
+                {card.description}
+              </p>
+
+              {/* Image */}
+              <div className="flex justify-center">
+                <div
+                  className={`relative w-full ${
+                    card.id === 2 ? "max-w-sm sm:max-w-md" : "max-w-md"
+                  } aspect-[4/3] rounded-3xl shadow-2xl overflow-hidden`}
+                >
                   <Image
                     src={card.image}
                     alt={`${card.badge} product illustration`}
                     fill
-                    className={card.id === 2 ? "object-cover" : "object-contain"}
+                    className="object-contain"
+                    sizes="(max-width: 640px) 100vw, 50vw"
                   />
                 </div>
-                </div>
-
-                {/* Learn More Button for NoBudd */}
-                {card.hasLearnMore && (
-                  <div className="flex justify-center">
-                    <a
-                      className="mt-2 mb-2 px-8 py-3 rounded-full font-medium transition-all duration-300"
-                      style={{
-                        backgroundColor: card.textColor,
-                        color: 'white',
-                      }}
-                      href={card.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Learn More
-                    </a>
-                  </div>
-                )}
               </div>
-            </motion.div>
-          ))}
-        </div>
+
+              {/* Learn More Button for NoBuddy */}
+              {card.hasLearnMore && (
+                <div className="flex justify-center">
+                  <a
+                    className="mt-2 mb-2 px-8 py-3 rounded-full font-medium transition-all duration-300"
+                    style={{
+                      backgroundColor: card.textColor,
+                      color: "white",
+                    }}
+                    href={card.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Learn More
+                  </a>
+                </div>
+              )}
+            </div>
+          </motion.div>
+        ))}
+      </div>
+
       </div>
     </section>
   );
