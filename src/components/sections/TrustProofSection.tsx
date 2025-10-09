@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, useScroll, useTransform, useAnimation, useInView } from 'framer-motion';
+import { motion, useScroll, useTransform, useAnimation, useInView, Variants } from 'framer-motion';
 import { useRef, useEffect } from 'react';
 import Image from 'next/image';
 
@@ -13,37 +13,42 @@ const trustProofCards = [
   { id: 6, number: '06', title: 'Agile Process & On-Time Delivery', description: 'We use an agile methodology with clear milestones, regular updates, and rigorous testing to deliver your project on schedule and to the highest standard.', bgColor: 'bg-[#f9f9f9]', textColor: 'text-[#666666]', image: '/images/trust-proof/devang.avif' },
 ];
 
-// ------------------- Mobile Card Component -------------------
-function MobileTrustCard({ card, index }: { card: typeof trustProofCards[number]; index: number }) {
-  const ref = useRef<HTMLDivElement | null>(null);
+// ------------------- Mobile Card -------------------
+interface MobileTrustCardProps {
+  card: typeof trustProofCards[number];
+  index: number;
+}
+
+const mobileVariants: Variants = {
+  hidden: (i: number) => ({
+    opacity: 0,
+    x: i % 2 === 0 ? -120 : 120,
+    y: -120,
+  }),
+  visible: (i: number) => ({
+    opacity: 1,
+    x: 0,
+    y: 0,
+    transition: { type: 'spring', stiffness: 60, damping: 16, mass: 0.8, delay: i * 0.06 },
+  }),
+};
+
+function MobileTrustCard({ card, index }: MobileTrustCardProps) {
+  const ref = useRef<HTMLElement | null>(null); // <-- change from HTMLDivElement
   const controls = useAnimation();
   const inView = useInView(ref, { amount: 0.25 });
 
   useEffect(() => {
-    controls.start(inView ? "visible" : "hidden");
+    controls.start(inView ? 'visible' : 'hidden');
   }, [inView, controls]);
-
-  const variants = {
-    hidden: (i: number) => ({
-      opacity: 0,
-      x: i % 2 === 0 ? -120 : 120,
-      y: -120,
-    }),
-    visible: (i: number) => ({
-      opacity: 1,
-      x: 0,
-      y: 0,
-      transition: { type: "spring", stiffness: 60, damping: 16, mass: 0.8, delay: i * 0.06 },
-    }),
-  };
 
   return (
     <motion.div
-      ref={ref}
+      ref={ref as any} // <-- type cast to any to satisfy framer-motion
       custom={index}
       initial="hidden"
       animate={controls}
-      variants={variants}
+      variants={mobileVariants}
       className={`${card.bgColor} rounded-3xl px-6 pt-6 w-full h-auto flex flex-col relative overflow-hidden shadow-lg`}
     >
       <div className={`bg-background w-10 h-10 rounded-full flex items-center justify-center text-base font-bold ${card.textColor} mb-6`}>{card.number}</div>
@@ -58,20 +63,19 @@ function MobileTrustCard({ card, index }: { card: typeof trustProofCards[number]
   );
 }
 
+
 // ------------------- TrustProofSection -------------------
 export default function TrustProofSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: sectionRef, offset: ['start end', 'end start'] });
 
-  // Desktop Horizontal Scroll
   const x = useTransform(scrollYProgress, [0, 1], ['55%', '-55%']);
   const opacity = useTransform(scrollYProgress, [0, 0.1, 0.9, 1], [0, 1, 1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.1, 0.9, 1], [0.8, 1, 1, 0.8]);
 
   return (
     <section ref={sectionRef} id="reputation" className="relative h-full md:h-[600vh] bg-white">
-      
-      {/* ---------------- Mobile View ---------------- */}
+      {/* Mobile */}
       <div className="md:hidden py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
@@ -95,7 +99,7 @@ export default function TrustProofSection() {
         </div>
       </div>
 
-      {/* ---------------- Desktop View ---------------- */}
+      {/* Desktop */}
       <div className="hidden md:flex sticky top-0 h-screen items-center justify-center overflow-hidden">
         <motion.div style={{ opacity, scale }} className="w-full max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
