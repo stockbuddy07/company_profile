@@ -11,12 +11,14 @@ export default function Header() {
 
   // Mobile menu items
   const items = [
-    { label: 'Home', href: '#' },
-    { label: 'About', href: '#' },
-    { label: 'Projects', href: '#' },
-    { label: 'Blog', href: '#' },
-    { label: 'Contact', href: '#' },
+    { label: 'Home', href: '#home' },
+    { label: 'Solution', href: '#reputation' },
+    { label: 'Team', href: '#solution' },
+    { label: 'Projects', href: '#products' },
+    { label: 'Contact', href: '#get-in-touch' },
   ];
+  
+
 
   // Menu open/close animation
   const menuVariants: Variants = {
