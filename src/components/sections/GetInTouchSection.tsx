@@ -336,137 +336,110 @@ export default function GetInTouchSection() {
         </motion.div>
 
         {/* Form Modal */}
-        {showForm && (
-          <div className="fixed inset-0 bg-black bg-opacity-40 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-            <div className="bg-white rounded-xl max-w-lg w-full p-8 relative shadow-lg">
+      {showForm && (
+          <div
+            className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-md flex items-center justify-center z-50 p-4"
+            onClick={(e) => {
+              // Close modal only if user clicks on backdrop, not inside the form
+              if (e.target === e.currentTarget) {
+                setShowForm(false);
+              }
+            }}
+          >
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 40 }}
+              transition={{ duration: 0.3 }}
+              className="bg-white rounded-2xl w-full max-w-md md:max-w-lg p-6 md:p-8 relative shadow-2xl"
+            >
+              {/* Close Button */}
               <button
                 onClick={() => setShowForm(false)}
-                className="absolute top-4 right-4 text-gray-600 hover:text-gray-900 text-3xl font-bold"
+                className="absolute top-3 right-3 text-gray-500 hover:text-gray-800 text-2xl font-bold"
                 aria-label="Close form"
               >
                 &times;
               </button>
-              <div className="mb-6 text-center">
-                <span className="inline-block  text-white bg-indigo-200  bg-purple-x600 rounded-full px-4 py-1 text-sm font-semibold mb-2">
+
+              {/* Header */}
+              <div className="mb-4 text-center">
+                <span className="inline-block text-white bg-indigo-400 rounded-full px-4 py-1 text-sm font-semibold mb-2">
                   Contact Us
                 </span>
-                <h2 className="text-3xl font-extrabold text-gray-900 mb-2">Let’s Get In Touch.</h2>
-                <p className="text-gray-600">
-                  Or just reach out manually to us at{' '}
-                  <a href="stockbuddy07@gmail.com" className="text-indigo-600 hover:underline">
+                <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900 mb-1">
+                  Let’s Get In Touch.
+                </h2>
+                <p className="text-gray-600 text-sm md:text-base">
+                  Or reach out manually at{' '}
+                  <a
+                    href="mailto:stockbuddy07@gmail.com"
+                    className="text-indigo-600 hover:underline"
+                  >
                     stockbuddy07@gmail.com
                   </a>
                 </p>
               </div>
-              <form action="https://formspree.io/f/xdkwdady" method="POST" className="space-y-6">
-                <label className="block text-gray-700 font-semibold">
+
+              {/* Form */}
+              <form
+                action="https://formspree.io/f/xdkwdady"
+                method="POST"
+                className="space-y-4"
+              >
+                <label className="block text-gray-700 font-semibold text-sm md:text-base">
                   Full Name
-                  <div className="relative mt-1">
-                    <input
-                      type="text"
-                      name="name"
-                      placeholder="Enter your full name"
-                      required
-                      className="w-full rounded-lg border border-gray-300 pl-10 pr-4 py-3 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
-                    />
-                    <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                      <svg
-                        className="h-5 w-5 text-gray-400"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M5.121 17.804A9 9 0 1118.88 6.196M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                        />
-                      </svg>
-                    </div>
-                  </div>
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Enter your full name"
+                    required
+                    className="w-full rounded-lg border border-gray-300 px-4 py-2 mt-1 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
+                  />
                 </label>
-                <label className="block text-gray-700 font-semibold">
+
+                <label className="block text-gray-700 font-semibold text-sm md:text-base">
                   Email Address
-                  <div className="relative mt-1">
-                    <input
-                      type="email"
-                      name="email"
-                      placeholder="Enter your email address"
-                      required
-                      className="w-full rounded-lg border border-gray-300 pl-10 pr-4 py-3 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
-                    />
-                    <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                      <svg
-                        className="h-5 w-5 text-gray-400"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M16 12H8m0 0l4-4m-4 4l4 4"
-                        />
-                      </svg>
-                    </div>
-                  </div>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Enter your email address"
+                    required
+                    className="w-full rounded-lg border border-gray-300 px-4 py-2 mt-1 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
+                  />
                 </label>
-                <label className="block text-gray-700 font-semibold">
+
+                <label className="block text-gray-700 font-semibold text-sm md:text-base">
                   Message
                   <textarea
                     name="message"
                     placeholder="Enter your message"
-                    rows={5}
+                    rows={3}
                     required
-                    className="w-full rounded-lg border border-gray-300 p-3 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition resize-none"
+                    className="w-full rounded-lg border border-gray-300 p-3 mt-1 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition resize-none"
                   ></textarea>
                 </label>
-                <style>
-                  {`
-                    @keyframes roamingGradient {
-                      0% {
-                        background-position: 0% 50%;
-                      }
-                      50% {
-                        background-position: 100% 50%;
-                      }
-                      100% {
-                        background-position: 0% 50%;
-                      }
-                    }
-                  `}
-                </style>
+
                 <motion.button
                   type="submit"
-                  whileHover={{ scale: 1.05, boxShadow: '0 0 12px rgba(139, 92, 246, 0.7)' }}
+                  whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="w-full text-white font-semibold py-3 rounded-full shadow-md hover:shadow-lg transition flex items-center justify-center space-x-2"
+                  className="w-full text-white font-semibold py-2.5 md:py-3 rounded-full shadow-md hover:shadow-lg transition"
                   style={{
-                    background: 'linear-gradient(270deg, #8b5cf6, #a78bfa, #8b5cf6)',
+                    background:
+                      'linear-gradient(270deg, #8b5cf6, #a78bfa, #8b5cf6)',
                     backgroundSize: '600% 600%',
                     animation: 'roamingGradient 8s ease infinite',
                   }}
                 >
-                  <span>Submit Form</span>
-                  <svg
-                    className="w-5 h-5"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                  </svg>
+                  Submit Form
                 </motion.button>
               </form>
-            </div>
+            </motion.div>
           </div>
         )}
+
+
       </section>
     </div>
   );
