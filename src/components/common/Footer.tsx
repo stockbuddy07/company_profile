@@ -74,10 +74,10 @@ export default function Footer() {
               >
                 Instagram
               </a>
+  
               <a
-                href="https://www.instagram.com/_nobuddy07/"
+                href="#get-in-tuch"
                 target="_blank"
-                rel="noopener noreferrer"
                 className="hover:text-cta transition-colors duration-200"
               >
                 Get-in-Touch
