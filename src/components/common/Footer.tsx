@@ -77,7 +77,6 @@ export default function Footer() {
   
               <a
                 href="#get-in-tuch"
-                target="_blank"
                 className="hover:text-cta transition-colors duration-200"
               >
                 Get-in-Touch
