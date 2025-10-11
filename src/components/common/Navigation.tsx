@@ -5,9 +5,10 @@ export const navigationItems = [
   { name: 'Solution', href: '#reputation' },
   { name: 'Team', href: '#solution' },
   { name: 'Projects', href: '#products' },
-  { name: 'Docs', href: 'https://docs.aeom.ai/' },
+  { name: 'Contact', href: '#get-in-touch' },
 ];
 
+  
 export default function Navigation() {
   return (
     <nav className="hidden md:flex items-center space-x-7">
