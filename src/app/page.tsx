@@ -20,6 +20,7 @@ export default function Home() {
       <GetInTouchSection />
       <PartnershipsSection />
       <Footer />
+       <SpeedInsights />
       {/* <div className="h-[300vh] bg-white"></div> */}
     </>
   );
