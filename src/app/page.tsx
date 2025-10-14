@@ -6,6 +6,7 @@ import ProductsPoweredSection from '@/components/sections/ProductsPoweredSection
 import GetInTouchSection from '@/components/sections/GetInTouchSection';
 import PartnershipsSection from '@/components/sections/PartnershipsSection';
 import Footer from '@/components/common/Footer';
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export default function Home() {
   return (
