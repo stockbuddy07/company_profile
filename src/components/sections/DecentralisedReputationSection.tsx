@@ -74,8 +74,8 @@ const teamMemberData = [
     description: 'Devang is passionate about creating intuitive, user-centric designs that bridge the gap between user needs and business goals.',
     socials: [
       { name: 'Instagram', url: 'https://instagram.com/_devang_kheni_' },
-      { name: 'LinkedIn', url: 'https://www.linkedin.com/in/ayushgajjar123' },
-      { name: 'GitHub', url: 'https://github.com/ayush101x' },
+      { name: 'LinkedIn', url: 'http://www.linkedin.com/in/devang-kheni-web-developer' },
+      { name: 'GitHub', url: 'https://github.com/Devangkheni2003' },
     ],
     bgColor: 'bg-[#f3e5f5]',
     textColor: 'text-[#9c27b0]',
