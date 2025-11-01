@@ -27,9 +27,9 @@ const teamMemberData = [
   {
     id: 2,  
     name: 'Premal Ariwala',
-    position: 'Managing Director for Development',
+    position: 'Managing Director of Development',
     profilePic: '/images/team/premal.jpg',
-    description: 'As Managing Director for Development, championing innovative solutions that merge technical precision with strategic vision, delivering measurable results and lasting competitive advantage.',
+    description: 'As Managing Director of Development, championing innovative solutions that merge technical precision with strategic vision, delivering measurable results and lasting competitive advantage.',
     socials: [
       { name: 'Instagram', url: 'https://instagram.com/premal6114' },
       { name: 'LinkedIn', url: 'https://linkedin.com/in/premal-ariwala' },
