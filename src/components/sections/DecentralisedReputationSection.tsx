@@ -27,9 +27,9 @@ const teamMemberData = [
   {
     id: 2,  
     name: 'Premal Ariwala',
-    position: 'Pixel-Perfect Frontend Development',
+    position: 'Managing Director for Development',
     profilePic: '/images/team/premal.jpg',
-    description: 'Premal specializes in building fast, responsive, and scalable front-end applications with a focus on clean code and performance.',
+    description: 'As Managing Director for Development, championing innovative solutions that merge technical precision with strategic vision, delivering measurable results and lasting competitive advantage.',
     socials: [
       { name: 'Instagram', url: 'https://instagram.com/premal6114' },
       { name: 'LinkedIn', url: 'https://linkedin.com/in/premal-ariwala' },
